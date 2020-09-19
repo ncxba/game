@@ -59,8 +59,8 @@ export default {
       tabs: [
         {text: "账号", url: '/user', img: require("../imgs/nav1.png"), active: require('../imgs/nav1.png')},
         {text: "福利", url: '/welfare', img: require("../imgs/nav2.png"), active: require('../imgs/nav2.png')},
-        {text: "客服", url: '/message', img: require("../imgs/nav3.png"), active: require('../imgs/nav3.png')},
-        {text: "消息", url: '/service', img: require("../imgs/nav4.png"), active: require('../imgs/nav4.png')}
+        {text: "客服", url: '/service', img: require("../imgs/nav3.png"), active: require('../imgs/nav3.png')},
+        {text: "消息", url: '/message', img: require("../imgs/nav4.png"), active: require('../imgs/nav4.png')}
       ],
       true:true
     }

@@ -36,4 +36,5 @@ export default {
 @import "../style/base.css";
 @import "../style/login.css";
 @import "../style/user.css";
+
 </style>
