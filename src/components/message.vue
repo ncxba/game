@@ -1,7 +1,6 @@
 <template>
   <div id="container">
     <div class="main">
-      <!--        <jsp:include page="left.html"></jsp:include>-->
 
       <div id="content2">
         <div class="top">
