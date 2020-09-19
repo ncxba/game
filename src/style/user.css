@@ -1,0 +1,630 @@
+.main {
+    /*width: 7rem;*/
+    height: 100%;
+    /*background-color: #edf3f2;*/
+}
+
+#nav {
+    float: left;
+    width: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+#nav li {
+    width: 100%;
+    color: #9e9e9e;
+    font-size: 0.28rem;
+    text-align: center;
+}
+
+#nav li a {
+    display: block;
+}
+
+#nav li.active a {
+    color: #000;
+    font-weight: bold;
+}
+
+#nav li a img {
+    display: block;
+    width: 0.5rem;
+    margin: 0 auto;
+}
+
+#nav li a p {
+    line-height: 0.3rem;
+}
+
+
+#content {
+    /*float: left;
+    width: 6rem;*/
+    height: 100%;
+    overflow: scroll;
+  background-color: #edf3f2;
+}
+
+.user {
+    padding: 0.4rem 0.2rem 1rem;
+    background: #ffcc00;/*background-color: #ffcc00;*/
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+}
+
+.user > img {
+    display: block;
+    float: left;
+    width: 1rem;
+}
+
+.user .message {
+    float: left;
+    margin-left: 0.2rem;
+}
+
+.user .message .name {
+    font-weight: bold;
+    font-size: 0.3rem;
+}
+
+.user .message p {
+    margin-top: 0.2rem;
+}
+
+.mine {
+    width: 5.6rem;
+    margin: -0.5rem auto 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.2rem;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.mine li a {
+    display: block;
+}
+
+.mine li a img {
+    display: block;
+    width: 0.5rem;
+    margin: 0 auto;
+}
+
+.mine li a p {
+    text-align: center;
+}
+
+.item {
+    width: 100%;
+    margin-top: 0.1rem;
+}
+
+.item li {
+    height: 0.8rem;
+    padding: 0 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.item li p {
+    font-size: 0.28rem;
+}
+
+.item li .go a img {
+    display: block;
+    height: 0.25rem;
+}
+
+.top {
+    width: 100%;
+    padding: 0.2rem 0;
+    position: relative;
+}
+
+.top .back {
+    position: absolute;
+    left: 0;
+}
+
+.top .back > img {
+    display: block;
+    width: 0.2rem;
+}
+
+.top h1 {
+    text-align: center;
+    font-size: 0.3rem;
+}
+
+.top .wen {
+    position: absolute;
+    right: 0;
+    top: 0.2rem;
+}
+
+.top .wen > img {
+    display: block;
+    width: 0.36rem;
+}
+
+/*  充值  */
+.select > p {
+    font-size: 0.3rem;
+    color: #5d410d;
+}
+
+.select .money {
+    margin-top: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.select .money li {
+    text-align: center;
+    padding: 0.2rem;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+}
+
+.select .money li h3 {
+    font-size: 0.3rem;
+    color: #38301b;
+}
+
+.select .money li > p {
+    text-decoration: line-through;
+    color: #b6b6b6;
+}
+
+.other {
+    display: block;
+    width: 100%;
+    height: 0.8rem;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    padding: 0 0.2rem;
+    border: none;
+    background: #ddd;
+    color: #fff;
+}
+
+.select .mean {
+    margin-top: 0.2rem;
+    overflow: hidden;
+}
+
+.select .mean li {
+    float: left;
+    text-align: center;
+    padding: 0.2rem;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    margin-right: 0.2rem;
+}
+
+.select .mean li > img {
+    display: block;
+    margin: 0 auto;
+    width: 0.6rem;
+}
+
+.select .mean li > p {
+    color: #b6b6b6;
+}
+
+.pay {
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    background: #ffc837;
+    font-size: 0.3rem;
+    border: none;
+}
+
+/*  充值 结束  */
+
+
+/*  修改密码  */
+#content2 {
+    height: 100%;
+    overflow: scroll;
+    padding: 0 0.2rem;
+    background: #fff;
+}
+
+.change input[type=text] {
+    display: block;
+    width: 100%;
+    height: 0.8rem;
+    padding: 0 0.2rem;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    border: none;
+    background: #f5f5f5;
+}
+
+.change input[type=button] {
+    display: block;
+    width: 100%;
+    height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    border: none;
+    background: #ffcc00;
+    color: #fff;
+}
+
+/*  修改密码 结束  */
+
+
+/*   记录  */
+.top .note {
+    width: 3rem;
+    height: 0.8rem;
+    margin: 0 auto;
+}
+
+.top .note li {
+    float: left;
+    width: 1.5rem;
+    text-align: center;
+    line-height: 0.8rem;
+    background: #f5f5f5;
+    font-size: 0.28rem;
+    border-radius: 3px;
+}
+
+.top .note li.active {
+    background: #ffc736;
+}
+
+/*   记录 结束  */
+
+
+/*  防沉迷  */
+.prevent2 {
+    margin-top: 0.3rem;
+}
+
+.prevent2 p {
+    color: #5d410d;
+    font-weight: bold;
+    line-height: 0.3rem;
+}
+
+.prevent2 input {
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.3rem auto;
+    font-size: 0.3rem;
+    border: none;
+}
+
+.prevent2 form input[type=text] {
+    display: block;
+    width: 100%;
+    height: 0.8rem;
+    padding: 0 0.2rem;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    border: none;
+    background: #e8e8e8;
+}
+
+.prevent2 form input[type=button] {
+    display: block;
+    width: 100%;
+    height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    border: none;
+    background: #ddd;
+    color: #fff;
+}
+
+/*  防沉迷 结束  */
+
+
+/*  绑定手机  */
+.now {
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+    font-weight: bold;
+    margin: 0.3rem auto;
+}
+
+.bind .row {
+    width: 100%;
+    height: 0.8rem;
+    margin: 0.2rem auto;
+    position: relative;
+}
+
+.bind .row > input {
+    width: 100%;
+    height: 100%;
+    padding: 0 0.2rem;
+    border: none;
+    border-radius: 5px;
+    background: #f5f5f5;
+}
+
+.bind .row .fill-code {
+    float: left;
+    width: 3rem;
+}
+
+.bind .row .code {
+    float: right;
+    width: 2.2rem;
+    text-align: center;
+    line-height: 0.8rem;
+    background: #9e9e9e;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.bind .button {
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    background: #ffcc00;
+    color: #fff;
+    font-size: 0.3rem;
+    border: none;
+}
+
+/*  绑定手机 结束  */
+
+
+/*  消息 */
+.empty {
+    padding: 0.4rem 0;
+}
+
+.empty img {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.empty p {
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
+/*  消息 结束  */
+
+
+/*  福利  */
+.welfare-head {
+    height: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.welfare-head li {
+    font-size: 0.3rem;
+    line-height: 1rem;
+    color: #9e9e9e;
+}
+
+.welfare-head li.active {
+    color: #000;
+    font-weight: bold;
+    position: relative;
+}
+
+.welfare-head li.active:after {
+    display: block;
+    content: "";
+    width: 10px;
+    height: 3px;
+    background: #ffcc00;
+    position: absolute;
+    left: calc(50% - 5px);
+    top: 0.8rem;
+}
+
+.receive-code {
+    height: 0.8rem;
+}
+
+.receive-code input[type=text] {
+    float: left;
+    width: 3.6rem;
+    height: 100%;
+    padding: 0 0.2rem;
+    border: none;
+    border-radius: 5px;
+    background: #e8e8e8;
+}
+
+.receive-code input[type=button] {
+    float: right;
+    width: 1.6rem;
+    text-align: center;
+    line-height: 0.8rem;
+    background: #9e9e9e;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+}
+
+.welfare {
+    display: none;
+}
+
+.welfare.active {
+    display: block;
+}
+
+.coupon {
+    width: 100%;
+}
+
+.coupon li {
+    margin: 0.3rem auto;
+}
+
+.coupon li .info1 {
+    width: 100%;
+    border: 1px solid #ffcc00;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.1rem 0;
+}
+
+.coupon li .info1 .price {
+    font-weight: bold;
+    color: red;
+    font-size: 0.4rem;
+}
+
+.coupon li .info1 .detail .name {
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 0.3rem;
+}
+
+.coupon li .info1 .detail .date {
+    margin: 0.1rem auto;
+    color: #9e9e9e;
+}
+
+.coupon li .info1 .detail .tag {
+    background: #f5f5f5;
+    border-radius: 25px;
+    width: 1.5rem;
+    text-align: center;
+    padding: 0.1rem 0.2rem;
+}
+
+.coupon li .info1 .receive {
+    padding: 0.1rem 0.2rem;
+    border: 1px solid #ffcc00;
+    color: #ffcc00;
+    border-radius: 25px;
+}
+
+.coupon li .info2 {
+    width: 100%;
+    height: 0.8rem;
+    border: 1px solid #ffcc00;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.coupon li .info2 p {
+    color: #9e9e9e;
+}
+
+.coupon li .info2 a {
+    color: red;
+}
+
+.gift li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #9e9e9e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gift li .message {
+    width: 4rem;
+}
+
+.gift li .message h2 {
+    font-size: 0.32rem;
+}
+
+.gift li .message p {
+    line-height: 0.3rem;
+    color: #9e9e9e;
+    margin-top: 0.1rem;
+}
+
+.gift li .apply {
+    width: 1rem;
+    text-align: center;
+    padding: 0.1rem 0.2rem;
+    background: #ffcc00;
+    border-radius: 25px;
+}
+
+/*  福利 结束  */
+
+.coin{
+    background: red;
+}
+
+.payType{
+    background-color: #cccccc;
+}
+
+/*  充值记录 开始  */
+.rechargeRecord{
+    width: 85%;
+    margin-bottom: .2rem;
+    max-height: 4.9rem;
+    overflow-y: auto;
+}
+.rechargeRecord table{
+    width: 100%;
+}
+.rechargeRecord tr{
+    width: 100%;
+}
+.rechargeRecord td{
+    text-align: center;
+}
+.rechargeRecord .loading{
+    color: #666666;
+    font-size: 12px;
+    text-align: center;
+}
+.consumeRecord{
+    width: 85%;
+    margin-bottom: .2rem;
+    max-height: 4.8rem;
+    overflow-y: auto;
+}
+.consumeRecord table{
+    width: 100%;
+}
+.consumeRecord tr{
+    width: 100%;
+}
+.consumeRecord td{
+    text-align: center;
+}
+.consumeRecord .loading{
+    color: #666666;
+    font-size: 12px;
+    text-align: center;
+}
+/*  充值记录 结束  */

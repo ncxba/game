@@ -1,0 +1,479 @@
+
+.login{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 1px 1px 10px 1px #ccc;
+    border-radius: 10px;
+    padding: 0.3rem;
+}
+
+.logo{
+    display: block;
+    height: 0.6rem;
+}
+
+.disable {
+    pointer-events: none;
+}
+
+.box{
+    width: 100%;
+}
+
+.box h2{
+    color: #392b15;
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    padding: 0.2rem 0;
+}
+
+.box .row{
+    width: 100%;
+    height: 0.8rem;
+    margin: 0.2rem auto;
+    position: relative;
+}
+.box .row>input{
+    width: 100%;
+    height: 100%;
+    padding: 0 0.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #e8e8e8;
+}
+.box .row .forget{
+    height: 0.6rem;
+    line-height: 0.6rem;
+    padding: 0 0.2rem;
+    border: 0.01rem solid #ffc837;
+    color: #ffc837;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.1rem;
+    border-radius: 25px;
+}
+
+.box .row .fill-code{
+    float: left;
+    width: 4.5rem;
+}
+.box .row .code{
+    float: right;
+    width: 2.2rem;
+    text-align: center;
+    line-height: 0.8rem;
+    background-color: #9e9e9e;
+    border-radius: 5px;
+    color: #fff;
+}
+.box .tip{
+    text-align: center;
+    color: #9e9e9e;
+    margin-bottom: 0.1rem;
+}
+.box .tip a{
+    color: #333;
+    text-decoration: underline;
+}
+
+.box .button{
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    background-color: #ffc837;
+    font-size: 0.3rem;
+}
+
+.fun{
+    color: #6ecbce;
+    text-align: center;
+}
+.fun a{
+    font-size: 0.28rem;
+    color: #6ecbce;
+}
+.fun span{
+    margin: 0 0.1rem;
+}
+
+
+
+/*  防沉迷系统  */
+.frame{
+    width: 6rem;
+    height: 6rem;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 1px 1px 10px 1px #ccc;
+    border-radius: 10px;
+    padding: 0.3rem;
+}
+
+.frame .title{
+    position: relative;
+}
+.frame .title .back{
+    position: absolute;
+    left: 0;
+}
+.frame .title .back>img{
+    display: block;
+    width: 0.2rem;
+}
+.frame .title h1{
+    text-align: center;
+    font-size: 0.3rem;
+}
+
+.frame .con{
+    margin-top: 0.3rem;
+}
+.frame .con .limit{
+    color: #594e41;
+    line-height: 0.32rem;
+    margin-bottom: 0.1rem;
+}
+.frame .con p{
+    line-height: 0.32rem;
+}
+.frame .con p a{
+    color: #6ecbce;
+}
+.frame .con form input[type=text]{
+    display: block;
+    width: 100%;
+    height: 0.8rem;
+    padding: 0 0.2rem;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    border: none;
+    background-color: #e8e8e8;
+}
+.frame .con form input[type=button]{
+    display: block;
+    width: 100%;
+    height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    border: none;
+    background-color: #ddd;
+    color: #fff;
+}
+
+.frame .con .type{
+    font-weight: bold;
+    font-size: 0.3rem;
+    width: 3rem;
+    background-color: #ffcc00;
+    padding: 0 0.2rem;
+    line-height: 0.4rem;
+    margin-top: 0.3rem;
+}
+.frame .con p span{
+    color: #ffcc00;
+    margin-right: 0.05rem;
+}
+
+
+
+/*  充值中心  */
+.center{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 1px 1px 10px 1px #ccc;
+    border-radius: 10px;
+    padding: 0.3rem;
+}
+.center h2{
+    text-align: center;
+    font-size: 0.3rem;
+}
+.recharge-close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 0.3rem;
+}
+.recharge{
+    margin-top: 0.3rem;
+ }
+.recharge>p{
+    color: #5d410d;
+}
+.term{
+    margin: 0.1rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+.term p{
+    font-size: 0.3rem;
+    color: #5d410d;
+}
+.term .right img{
+    width: 0.16rem;
+    vertical-align: middle;
+}
+.recharge input[type=button]{
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    background-color: #ffc837;
+    font-size: 0.3rem;
+    border: none;
+}
+
+.center .cover{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+.cover .cash{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0.3rem;
+    display: none;
+}
+.cover .cash .cash-close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 0.3rem;
+}
+.cover .cash h2{
+    text-align: center;
+    font-size: 0.3rem;
+    color: #5d410d;
+}
+.empty{
+    padding: 0.4rem 0;
+}
+.empty img{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+.empty p{
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
+.cover .pay-method{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0.3rem;
+    display: none;
+}
+.cover .pay-method .pay-close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 0.3rem;
+}
+.pay-method h2{
+    text-align: center;
+    font-size: 0.3rem;
+    color: #5d410d;
+}
+.pay-method .pay li{
+    margin: 0.3rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.28rem;
+}
+.pay-method .pay li .left{
+    line-height: 0.5rem;
+}
+.pay-method .pay li .left img{
+    vertical-align: middle;
+    width: 0.5rem;
+    margin-right: 0.1rem;
+}
+.pay-method .pay li input[type=radio]{
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+}
+/*  充值中心 结束  */
+
+/* 代金券 */
+.cover .cash{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0.3rem;
+    overflow-y: auto;
+}
+.cover .cash .cash-close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 0.3rem;
+}
+.cash h2{
+    text-align: center;
+    font-size: 0.3rem;
+    color: #5d410d;
+}
+.cash .coupon li{
+    margin: 0.3rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.28rem;
+}
+.cash .coupon li .left{
+    line-height: 0.5rem;
+}
+.cash .coupon li input[type=radio]{
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+}
+/*代金券结束*/
+
+
+.login .btn{
+    width:45%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    background-color: #ffc837;
+    font-size: 0.3rem;
+}
+
+.register{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 1px 1px 10px 1px #ccc;
+    border-radius: 10px;
+    padding: 0.3rem;
+}
+
+.login .reg{
+    width:45%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    background-color: #ffc837;
+    font-size: 0.3rem;
+}
+
+.login .login-btn{
+    display: flex;
+    width:100%;
+}
+
+.login .account{
+    width: 100%;
+    height: 2.5rem;
+    text-align: left;
+    font-size: 0.3rem;
+    position:absolute;
+    overflow-y: auto;
+}
+
+.account li{
+    height: 0.5rem;
+    line-height: 0.5rem;
+    padding-left: 0.2rem;
+    background-color: #cccccc;
+}
+
+.register .reg-account{
+    width:45%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    background-color: #ffc837;
+    font-size: 0.3rem;
+}
+
+.register .back{
+    width:45%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem auto;
+    background-color: #ffc837;
+    font-size: 0.3rem;
+}
+
+.register .login-btn{
+    display: flex;
+    width:100%;
+}
+.toast{
+  position: fixed;
+  z-index: 2000;
+  left: 50%;
+  top:45%;
+  transition:all .5s;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  border-radius: 5px;
+  color:#FFF;
+  background: rgba(17, 17, 17, 0.7);
+  height: 45px;
+  line-height: 45px;
+  padding: 0 15px;
+  max-width: 190px;
+}
