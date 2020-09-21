@@ -24,12 +24,9 @@ body{
   -moz-osx-font-smoothing: grayscale;
   margin: 0 !important;
   padding: 0;
-  /*text-align: center;*/
-  /*color: #2c3e50;*/
-  /*margin-top: 60px;*/
 }
 @media screen and (orientation: portrait) {
-  html{
+  /*html{
     width : 100vmin;
     height : 100vmax;
   }
@@ -42,10 +39,24 @@ body{
     height : 100vmin;
     transform-origin: top left;
     transform: rotate(90deg) translate(0,-100vmin);
+  }*/
+  html{
+    width : 100%;
+    height : 100%;
+  }
+  body{
+    width : 100%;
+    height : 100%;
+  }
+  #container{
+    width : 100%;
+    height : 100%;
+    transform-origin: top left;
+    transform: rotate(90deg) translate(0,-100vmin);
   }
 }
 @media screen and (orientation: landscape) {
-  html{
+ /* html{
     width : 100vmax;
     height : 100vmin;
   }
@@ -56,6 +67,18 @@ body{
   #container{
     width : 100vmax;
     height : 100vmin;
+  }*/
+  html{
+    width : 100%;
+    height : 100%;
+  }
+  body{
+    width : 100%;
+    height : 100%;
+  }
+  #container{
+    width : 100%;
+    height : 100%;
   }
 }
 

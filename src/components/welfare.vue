@@ -131,13 +131,7 @@ name: "welfare",
   border: none;
 
 }
-.content3{
-  position: fixed;
-  width: 93%;
-  overflow: scroll;
-  padding: 0 0.2rem;
-  background: #fff;
-}
+
 .cain{
   background-color: #FFFFFF !important;
   height: auto !important;

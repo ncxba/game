@@ -24,6 +24,9 @@ import Prevent2 from "@/components/prevent2"
 import Questions from "@/components/questions"
 import ProblemSolved from "@/components/problemSolved"
 import UnresolvedPro from "@/components/unresolvedPro"
+import Myconsultation from "@/components/myconsultation"
+import AdvisoryDetail from "@/components/advisoryDetail"
+import QuestionDetails from "@/components/questionDetails"
 
 Vue.use(Router)
 
@@ -172,6 +175,21 @@ export default new Router({
       path: '/unresolvedPro',
       name: 'unresolvedPro',
       component: UnresolvedPro
+    },
+    {
+      path: '/myconsultation',
+      name: 'myconsultation',
+      component: Myconsultation
+    },
+    {
+      path: '/advisoryDetail',
+      name: 'advisoryDetail',
+      component: AdvisoryDetail
+    },
+    {
+      path: '/questionDetails',
+      name: 'questionDetails',
+      component: QuestionDetails
     }
   ]
 })

@@ -25,34 +25,81 @@
         </ul>-->
 
         <div class="Customer-service">
-          <div class="phone">
+          <!--<div class="phone">
             <img src="../imgs/lianxidhua.png" class="phone-img" alt="">
             <p>020-28187567</p>
-          </div>
-          <div class="WeChat">
-            <div class="WeChatpPublic">
-              <img src="../imgs/weixing.png" alt="" class="phone-img">
-              <p>公众号：liuyigame</p>
-              <img src="../imgs/xiaoxi.png" alt="" class="phone-img1xx">
-            </div>
-            <div class="WeChatpPublic">
-              <img src="../imgs/qq2.png" alt="" class="phone-img">
-              <p>QQ：800179461</p>
-              <img src="../imgs/xiaoxi.png" alt="" class="phone-img1xx">
-            </div>
+          </div>-->
+          <div class="Ask-questions">
+            <div class="advisory" @click="$router.push('/questions')">提问咨询</div>
+            <div class="advisory" @click="$router.push('/myconsultation')">我的咨询</div>
           </div>
         </div>
         <div class="qq-wanjiaqun">
-          <div class="jiar">玩家QQ群</div>
+          <div class="jiar"><i></i>常见问题</div>
+          <ul class="item lpo" >
+            <li @click="$router.push('/advisoryDetail')">
+              <p>游戏充值不到账怎么办？</p>
+              <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
+            </li>
+            <li>
+              <p>游戏充值购买记录我该如何查询呢？</p>
+              <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
+            </li>
+            <li>
+              <p>账号被盗了怎么办？</p>
+              <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
+            </li>
+            <li>
+              <p>我密码忘记了怎么办？</p>
+              <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
+            </li>
+            <li>
+              <p>我如何知道我的充值问题是否处理完了呢？</p>
+              <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
+            </li>
+            <li>
+              <p>如何查询我的订单</p>
+              <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
+            </li>
+            <!--<li @click="$router.push('/unresolvedPro')">
+              <p>未解决</p>
+              <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
+            </li>
+            <li @click="$router.push('/problemSolved')">
+              <p>已解决</p>
+              <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
+            </li>
+            <li @click="$router.push('/questions')">
+              <p>提问</p>
+              <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
+            </li>-->
+          </ul>
         </div>
+
 
         <div class="time">
           <div class="time-li">
             <img src="../imgs/naozh.png" alt="" class="naoz">
-            <h2>客服工作日:09:00--18:00 20:00--23:00</h2>
+            <h2>客服在线时间:09:00--18:00 20:00--23:00</h2>
           </div>
-          <div class="time-li">
-            <h2>在线时间节假日:10:30--22:30 </h2>
+          <!--<div class="time-li">
+            <h2>在线时间节假日:10:30&#45;&#45;22:30 </h2>
+          </div>-->
+          <div class="WeChat">
+            <div class="WeChatpPublic">
+              <img src="../imgs/weixing.png" alt="" class="phone-img">
+              <p>公众号：liuyigame</p>
+              <!--<img src="../imgs/xiaoxi.png" alt="" class="phone-img1xx">-->
+            </div>
+            <div class="WeChatpPublic">
+              <img src="../imgs/qq2.png" alt="" class="phone-img">
+              <p>QQ：800179461</p>
+             <!-- <img src="../imgs/xiaoxi.png" alt="" class="phone-img1xx">-->
+            </div>
+          </div>
+          <div class="phone">
+            <img src="../imgs/lianxidhua.png" class="phone-img" alt="">
+            <p>020-28187567</p>
           </div>
         </div>
 
@@ -91,6 +138,7 @@ name: "service",
 .main{
   background-color: #efeff4;
   padding-top: 0.84rem;
+  overflow: auto;
 }
 .koop{
   padding: 0 0.2rem;
@@ -108,24 +156,25 @@ name: "service",
   line-height: 0.31rem;
 }
 .Customer-service{
-  height:  3.5rem ;
+  height:  3.1rem ;
   background-color: #FFFFFF;
   margin-top: 0.8rem;
-  padding-top: 1.15rem;
+  padding-top: 2.35rem;
 }
 .time{
-  height: 1.5rem;
+  height: 2.4rem;
   width: 90%;
-  margin: -5.1rem auto 0;
+  margin: -4.6rem auto 0;
   box-shadow: 1px 1px 5px 3px #888888;
   background-color: #FFFFFF;
-  padding: 0.2rem;
+  padding: 0.25rem;
 }
 .time-li{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 0.47rem;
+  margin-bottom: 0.08rem;
 }
 .naoz{
   width: 0.5rem;
@@ -134,7 +183,7 @@ name: "service",
 }
 .time-li h2{
   color: #1a1a1a;
-  font-size: 0.26rem;
+  font-size: 0.28rem;
   font-family: "思源黑体 CN";
   font-weight: 500;
 }
@@ -156,7 +205,7 @@ name: "service",
   font-size: 0.27rem;
 
 }
-.Customer-service .phone{
+.phone{
   width: 5.3rem;
   display: flex;
   justify-content: space-evenly;
@@ -167,17 +216,21 @@ name: "service",
   padding: 0 1.2rem;
 }
 .phone-img{
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.1rem;
 }
-.Customer-service .phone p{
+.phone p{
   color: #ff8d1b;
-  font-size: 0.28rem;
+  font-size: 0.32rem;
   line-height: 0.7rem;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 .WeChat{
-  width: 4.1rem;
+  width: 7.1rem;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
 }
 .WeChatpPublic{
   display: flex;
@@ -185,12 +238,49 @@ name: "service",
   justify-content: space-evenly;
 }
 .WeChatpPublic p{
-  font-size: 0.28rem;
+  font-size: 0.26rem;
   line-height: 0.6rem;
   color: #010101;
 }
 .phone-img1xx{
   width: 0.45rem;
   height: 0.45rem;
+}
+.jiar{
+  display: flex;
+  align-items: center;
+}
+.jiar i{
+  display: inline-block;
+  width: 0.055rem;
+  height: 0.38rem;
+  font-size: 0;
+  background: #ff8d1b;
+  margin-right: 0.173333rem;
+  border-radius: 5.333333rem;
+  vertical-align: middle;
+}
+.Ask-questions{
+  width: 100%;
+  display: flex;
+  /*border: 1px solid #ff8d1b;*/
+  padding: 0 0.5rem;
+}
+.advisory{
+   border: 1px solid #ffcc00;
+  border-radius: 3px;
+  padding: 0.1rem;
+  color: #3a3735;
+  font-size: 0.28rem;
+  width: 2rem;
+  text-align: center;
+  box-shadow: 1px 0px 4px 1px #ffcc00;
+}
+.advisory:last-child{
+  margin-left: 1rem;
+}
+.lpo{
+  padding-bottom: 0.8rem;
+  background-color: #FFFFFF;
 }
 </style>

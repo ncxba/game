@@ -27,7 +27,7 @@
   </ul>-->
   <div style="width: 100%;height: 100%;"><!-- height: 100%;-->
 
-      <div id="container" style=" width: auto;float: left;z-index: 99999;position: fixed;top: 0;left: 0;"><!--height: 100%;position: fixed;top: 0;left: 0;-->
+      <div id="container" style=" width: auto;float: left;z-index: 99999 ;position: fixed;top: 0;left: 0;"><!---->
         <div id="nav">
           <a href="javascript:;" class="nav " v-for="(i,index) in tabs" :key="index"
              :class="purr1 == index ? 'active' : ''" :data-index="index" @click="addClassName(index,$event)">
