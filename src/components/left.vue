@@ -39,7 +39,7 @@
         </div>
       </div>
     <keep-alive>
-      <router-view style="padding-left: 13vmin"></router-view>
+      <router-view style="padding-left: 0.97rem"></router-view><!--style="padding-left: 13vmin"-->
     </keep-alive>
 
 

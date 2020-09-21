@@ -2,13 +2,15 @@
   <div id="container">
     <div class="main">
       <!--        <jsp:include page="left.html"></jsp:include>-->
-
-      <div id="content2">
-        <ul class="welfare-head">
+      <div id="content2" class="cain">
+        <ul class="welfare-head" >
           <li :class="purr == 1 ? 'active' : ''" data-index="1" @click="haos($event)">卡券</li>
           <li :class="purr == 2 ? 'active' : ''" data-index="2" @click="haos($event)">福利</li>
           <li :class="purr == 3 ? 'active' : ''" data-index="3" @click="haos($event)">礼包</li>
         </ul>
+
+      </div>
+      <div class="koop">
         <div class="welfare ":class="purr == 1 ? 'active' : ''" data-index="1">
           <div class="receive-code">
             <input type="text" placeholder="请输入代金券领取码">
@@ -127,6 +129,25 @@ name: "welfare",
   border-radius: 5px;
   color: #fff;
   border: none;
+
+}
+.content3{
+  position: fixed;
+  width: 93%;
+  overflow: scroll;
+  padding: 0 0.2rem;
+  background: #fff;
+}
+.cain{
+  background-color: #FFFFFF !important;
+  height: auto !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.koop{
+  padding: 1rem 0.2rem 0;
 
 }
 </style>

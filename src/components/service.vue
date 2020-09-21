@@ -108,15 +108,15 @@ name: "service",
   line-height: 0.31rem;
 }
 .Customer-service{
-  height:  4rem ;
+  height:  3.5rem ;
   background-color: #FFFFFF;
   margin-top: 0.8rem;
-  padding-top: 1.75rem;
+  padding-top: 1.15rem;
 }
 .time{
-  height: 2rem;
+  height: 1.5rem;
   width: 90%;
-  margin: -5.5rem auto 0;
+  margin: -5.1rem auto 0;
   box-shadow: 1px 1px 5px 3px #888888;
   background-color: #FFFFFF;
   padding: 0.2rem;
