@@ -25,7 +25,22 @@
         </ul>-->
 
         <div class="Customer-service">
-
+          <div class="phone">
+            <img src="../imgs/lianxidhua.png" class="phone-img" alt="">
+            <p>020-28187567</p>
+          </div>
+          <div class="WeChat">
+            <div class="WeChatpPublic">
+              <img src="../imgs/weixing.png" alt="" class="phone-img">
+              <p>公众号：liuyigame</p>
+              <img src="../imgs/xiaoxi.png" alt="" class="phone-img1xx">
+            </div>
+            <div class="WeChatpPublic">
+              <img src="../imgs/qq2.png" alt="" class="phone-img">
+              <p>QQ：800179461</p>
+              <img src="../imgs/xiaoxi.png" alt="" class="phone-img1xx">
+            </div>
+          </div>
         </div>
         <div class="qq-wanjiaqun">
           <div class="jiar">玩家QQ群</div>
@@ -68,9 +83,14 @@ name: "service",
 .cain{
   background-color: #efe3c5 !important;
   height: auto !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .main{
   background-color: #efeff4;
+  padding-top: 0.84rem;
 }
 .koop{
   padding: 0 0.2rem;
@@ -85,17 +105,18 @@ name: "service",
   font-size: 24px;
   text-align: center;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 0.31rem;
 }
 .Customer-service{
   height:  4rem ;
   background-color: #FFFFFF;
   margin-top: 0.8rem;
+  padding-top: 1.75rem;
 }
 .time{
   height: 2rem;
   width: 90%;
-  margin: -5.6rem auto 0;
+  margin: -5.5rem auto 0;
   box-shadow: 1px 1px 5px 3px #888888;
   background-color: #FFFFFF;
   padding: 0.2rem;
@@ -134,5 +155,42 @@ name: "service",
   color: #1a1a1a;
   font-size: 0.27rem;
 
+}
+.Customer-service .phone{
+  width: 5.3rem;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  background-color: #efe3c5;
+  margin: 0 auto 0.15rem;
+  align-items: center;
+  padding: 0 1.2rem;
+}
+.phone-img{
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.Customer-service .phone p{
+  color: #ff8d1b;
+  font-size: 0.28rem;
+  line-height: 0.7rem;
+}
+.WeChat{
+  width: 4.1rem;
+  margin: 0 auto;
+}
+.WeChatpPublic{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.WeChatpPublic p{
+  font-size: 0.28rem;
+  line-height: 0.6rem;
+  color: #010101;
+}
+.phone-img1xx{
+  width: 0.45rem;
+  height: 0.45rem;
 }
 </style>
