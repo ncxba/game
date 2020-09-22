@@ -141,7 +141,13 @@ name: "welfare",
   width: 100%;
 }
 .koop{
-  padding: 1rem 0.2rem 0;
-
+  padding: 0 0.2rem;
+  height: 100%;
+  overflow: auto;
 }
+.main{
+  padding-top: 1rem;
+}
+
+
 </style>

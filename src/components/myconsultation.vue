@@ -65,7 +65,8 @@ export default {
 
 .koop {
   padding: 0 0.2rem;
-
+  overflow: auto;
+  height: 100%;
 }
 
 .advisory-list {

@@ -25,6 +25,7 @@
       </a>
     </li>
   </ul>-->
+
   <div style="width: 100%;height: 100%;"><!-- height: 100%;-->
 
       <div id="container" style=" width: auto;float: left;z-index: 99999 ;position: fixed;top: 0;left: 0;"><!---->
@@ -39,7 +40,7 @@
         </div>
       </div>
     <keep-alive>
-      <router-view style="padding-left: 0.97rem"></router-view><!--style="padding-left: 13vmin"-->
+      <router-view style="padding-left: 0.97rem;"></router-view><!--style="padding-left: 13vmin"-->
     </keep-alive>
 
 

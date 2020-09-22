@@ -62,4 +62,12 @@ export default {
 .display{
   display: block !important;
 }
+.empty img{
+  width: 44%;
+}
+.empty p {
+  text-align: center;
+  margin-top: 0.2rem;
+  font-size: 0.24rem;
+}
 </style>

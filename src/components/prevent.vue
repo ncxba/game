@@ -1,7 +1,8 @@
 <template>
   <div id="container" style="background: #000;">
-    <div class="frame">
-      <div class="title">
+    <div class="frame" style=" padding-top: 0;">
+      <div class="top">
+        <div class="back" onclick="history.back()"><img src="../imgs/back.png" alt=""></div>
         <h1>防沉迷系统</h1>
       </div>
       <div class="con">
@@ -66,6 +67,7 @@ export default {
 
 <style scoped>
 @import "../style/base.css";
+@import "../style/user.css";
 @import "../style/login.css";
 .submitPre{
   display: block;

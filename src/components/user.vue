@@ -7,7 +7,7 @@
           <img src="../imgs/tx.png" alt="">
           <div class="message">
             <div class="name">toor</div>
-            <p>专用饭团：<span>${userinfo.ubalance}</span> 元</p>
+            <p>专用饭团：<span>1 </span> 元</p>
           </div>
         </div>
         <ul class="mine">

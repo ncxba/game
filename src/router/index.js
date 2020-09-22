@@ -26,6 +26,11 @@ import ProblemSolved from "@/components/problemSolved"
 import UnresolvedPro from "@/components/unresolvedPro"
 import Myconsultation from "@/components/myconsultation"
 import AdvisoryDetail from "@/components/advisoryDetail"
+import AdvisoryDetail1 from "@/components/advisoryDetail1"
+import AdvisoryDetail2 from "@/components/advisoryDetail2"
+import AdvisoryDetail3 from "@/components/advisoryDetail3"
+import AdvisoryDetail4 from "@/components/advisoryDetail4"
+import AdvisoryDetail5 from "@/components/advisoryDetail5"
 import QuestionDetails from "@/components/questionDetails"
 
 Vue.use(Router)
@@ -122,7 +127,7 @@ export default new Router({
       component: Prevent
     },
     {
-      path: '/prevent-detail',
+      path: '/prevent-detail/:uid',
       name: 'prevent-detail',
       component: PreventDetail
     },
@@ -190,6 +195,31 @@ export default new Router({
       path: '/questionDetails',
       name: 'questionDetails',
       component: QuestionDetails
+    },
+    {
+      path: '/advisoryDetail1',
+      name: 'advisoryDetail1',
+      component: AdvisoryDetail1
+    },
+    {
+      path: '/advisoryDetail2',
+      name: 'advisoryDetail2',
+      component: AdvisoryDetail2
+    },
+    {
+      path: '/advisoryDetail3',
+      name: 'advisoryDetail3',
+      component: AdvisoryDetail3
+    },
+    {
+      path: '/advisoryDetail4',
+      name: 'advisoryDetail4',
+      component: AdvisoryDetail4
+    },
+    {
+      path: '/advisoryDetail5',
+      name: 'advisoryDetail5',
+      component: AdvisoryDetail5
     }
   ]
 })

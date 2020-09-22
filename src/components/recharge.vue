@@ -29,7 +29,7 @@
             </li>
           </ul>
         </div>
-        <input type="text" class="other" @input="inputFun" placeholder="请输入其他金额">
+        <input type="number" class="other" @input="inputFun" placeholder="请输入其他金额">
         <div class="select">
           <p>请选择充值方式：</p>
           <ul class="mean">
@@ -42,7 +42,7 @@
               <p id="2">微信支付</p>
             </li>
           </ul>
-          <p>到账专用饭团：<span style="color: red; font-size: 0.3rem;">500个饭团</span></p>
+          <p>到账专用饭团：<span style="color: red; font-size: 0.3rem;">{{RiceBall}}个饭团</span></p>
         </div>
         <div class="pay" @click="confirm($event)" v-model="textl" :title="text">确认支付：￥{{text}}</div>
         <div class="paytype" hidden></div>
@@ -64,7 +64,9 @@ name: "recharge",
     purr:1,
     toastShow: false,
     toastText: '',
-    textl:""
+    textl:"",
+    RiceBall:500
+
 
   }
   },
@@ -73,14 +75,30 @@ name: "recharge",
   },
   methods: {
     hao(e) {
-      console.log(e.currentTarget.firstElementChild.id)
+      //console.log(e.currentTarget.firstElementChild.id)
+     // console.log(e.currentTarget.lastElementChild.textContent)//获取最后一个子元素
+     // console.log(parseInt(e.currentTarget.lastElementChild.textContent)*10)//字符串中提取数字
+      this.RiceBall = parseInt(e.currentTarget.lastElementChild.textContent)*10
       this.text = e.currentTarget.firstElementChild.id
       this.textl = e.currentTarget.firstElementChild.id
       let thisCurr = e.detail.current || e.currentTarget.dataset.index || 0;
       this.curr = thisCurr;
     },
     inputFun(e){
-      let num = Number(e)
+      // console.log(parseInt(e.target.value))//
+      console.log(parseFloat(e.target.value))
+      //console.log( parseFloat(e.target.value)*26.315789473684211)//parseInt(5/2)
+       console.log(String(parseFloat(e.target.value)*26.315789473684211).split(".")[0])
+      console.log(parseInt(parseFloat(e.target.value)*26.315789473684211)) //取整数
+      if (e.target.value !== "") {
+        this.curr = 0
+      }
+      if (e.target.value === "") {
+        this.RiceBall = 0
+        this.text = 0
+        return
+      }
+      this.RiceBall = parseInt(parseFloat(e.target.value)*26.315789473684211)//parseInt(e.target.value)*10
       this.text = e.target.value;
       this.textl = e.target.value
     },
@@ -94,6 +112,8 @@ name: "recharge",
     },
     confirm(e){
       console.log(e.currentTarget.title)
+      // this.$router.push({name:'recharge-center',params:{uid:e.currentTarget.title}}) //这个是链接上面不显示任何参数
+      this.$router.push({path:'/recharge-center',query: {uid:e.currentTarget.title}});
       this.toast("正在支付中......")
     },
     haos(e) {

@@ -6,7 +6,7 @@
       <div class="recharge">
         <div class="term">
           <p>充值金额：</p>
-          <p>￥300</p>
+          <p>￥{{money}}</p>
         </div>
         <div class="term">
           <p>代金券：</p>
@@ -29,9 +29,9 @@
         </div>
         <div class="term">
           <p>您只需支付：</p>
-          <p id="amount">￥300</p>
+          <p id="amount">￥{{Payment}}</p>
         </div>
-        <input type="button" value="充值" id="goPay" @click="rechargeS">
+        <div  id="goPay" @click="rechargeS">充值</div>
       </div>
 
       <div class="cover" :style="{ display: item }" ><!--:style="{ display: dodelq }"-->
@@ -82,13 +82,19 @@ name: "recharge-center",
     huim:{
       img:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADyElEQVRoQ+1ZXVIaQRD+epaKlaqEJScINwg5QfQG5ASa5wTFE6gnACF5jpwgegLJCSQnEE7grlplxVro1MwisL8zy66oKeZ1e7v76//pIbzwQy9cf6wBPLUHs3mgc/Pp0RW2yMXXNwNTOXoA36+3wZMmQDVTpsXQ8QAk2vhW7qXxSwbQ4gpK7vnqFQ+rywN49hb2yYkDEg9AKm+5FyCqFmPNvFySQcQD6LonALbzii34/x4a9k6YZxTAj9saJuOLgoUXw05YH8MJHgXQddsA9vJJ5BFA0ouL5yAfT/X3ERr24SKfKICO0wdR3nIZEYSuy7kBMP/GbmVzDcDAkmsPxBqpkBBi7INEeqv3SkPsvx4GlOjeBGI3XsFJDYRWoocLAQA0wRoA49IoAsBkjqKJHFdkFYw/BQEwSIFouVtXIWm24jwQ26gWPCP6aLztB3PADTSgGDfqG11hAGIYmcRVIk33ug7wLy2PwgBoJWkIvPK7wHhsOjw+EwDRqbLjXBqN7s8DAH1Go3w681GW6Tc3AMYZQKcgGgaStHVXRcmrglUjqoK5Fj8Q8giNSvCSZBo++aoQ/4G3UY80p7RQV1dS2X1ZJmgdIBtMX7Bbno/ZCvj9pXFKLecBqby9OUs6dd28/TATarpFkJVmMXQkgyzWX84D7MKzq0p5NcuMDwBKmGm4D6YBLKtntBZRHrq+Mrb+cgBwjIbdhGmdftCGeQiiE3iveqlhp7x5UwfxNNTITgWUPYTElkrWjnMFokoma82JfSOYHN9Q85wJ/5MZgGw4pdsaMDk3kR+lYReitGkUUuGf/fK6My0A79XnzAAaNiFLnQ4oEaO8CpnrFkj0IrNSakW7q8K6r6sSHfKm5lI/DaGuMwBoXnm07uARRKkesXzXkZu+aRHgPmAdZQISI1e3lfDbvvKC11e1XHdksxuXdwKzzszyiCymIBNeiEPdDjRJrA4A8LBM8puOHImTNnY9CKsdsbrpjpXZAVEbXvk4aQ8aB0IPQFpovLEVKIeL91tBTmKSSjoe/zQa1Ba1Y5zAso5Nkl8PwM9+B0I0jd2sFJ9sg2JCRheCwULQx0S0sVc+Wz6EApaZNigWfSyOEPLCzlyB4Nq07BX7luA3RhlevXB4PdJuNJOZsxBHmuJ/uJ2W9ihmwZvFsnrahHt4wguNLJl/ZfPS13296AIo5FS8UYsbDJPfyPzmdQqQP4c82Uno6lN90l8p/Zm9CbB8pVyxN9gFVOVppzU2/TPrg+WVR3jZkTqb/9KaY4iTOYBsKqyMeg1gZaZOEPQPFJkOT1bX6oYAAAAASUVORK5CYII=",
       text:"支付宝支付"
-    }
+    },
+    money:0,
+    Payment:0
 
 
   }
   },
   created() {
-  // this.rooe(this.huim)
+    /*this.money = this.$route.params.uid;
+    console.log(this.money)*/
+    console.log(window.location.hash.split("=")[1])
+    this.money = window.location.hash.split("=")[1]
+    this.Payment =  window.location.hash.split("=")[1]
   },
   methods: {
     thewayrr(){
@@ -127,4 +133,15 @@ name: "recharge-center",
 <style scoped>
 @import "../style/base.css";
 @import "../style/login.css";
+#goPay{
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0.2rem auto;
+  background-color: #ffc837;
+  font-size: 0.3rem;
+  border: none;
+}
 </style>

@@ -9,14 +9,12 @@
       </div>
       <div class="koop">
         <div class="MsoNormal">
-          <h2>游戏充值不到账怎么办？</h2>
+          <h2>账号忘记了怎么办？</h2>
         </div>
         <div class="problems-details">
-          <p>请先不要着急哦~首先查询是否成功扣款呢~</p>
-          <p> 如成功扣款请提供充值记录历史购买截图或订单号打电话联系客服（也可以在线咨询留言）</p>
-          <p>注：反馈的时候请说明充值时间，充值金额，是否参与了活动，参与活动的内容，方便核实补发对应的活动奖励哦~</p>
-          <p>还请各位玩家如实反馈您的问题噢，如发现虚假反馈，官方必将严肃处理的！</p>
-          <p>自助服务更方便更快捷，直接到达技术欧巴手中，随时查看处理信息，保证账号安全！</p>
+          <p>萌萌哒的客服小精灵来了，账号忘记，有两种方法：</p>
+          <p>您可以在问题反馈页面，选择账号问题，填写账号找回的资料，进行找回哦~</p>
+          <p>还可以拨打客服页面的电话提供相应信息，即可进行申诉找回账号！</p>
           <span>2020-09-20 17:26:36</span>
         </div>
         <div class="Does-it-help">
@@ -50,7 +48,7 @@
 
 <script>
 export default {
-  name: "advisoryDetail",
+  name: "advisoryDetail5",
   data() {
     return {
       purr:0,
@@ -109,10 +107,10 @@ export default {
   height: 100%;
 }
 
- .Does-it-help {
+.Does-it-help {
   padding: 0.3rem 0.25rem 0.35rem;
   background-color: #FFFFFF;
-   margin-top: 0.2rem;
+  margin-top: 0.2rem;
 }
 .MsoNormal{
   padding: 0.3rem 0.25rem 0.1rem;
