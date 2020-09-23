@@ -32,6 +32,7 @@
           <p id="amount">￥{{Payment}}</p>
         </div>
         <div  id="goPay" @click="rechargeS">充值</div>
+
       </div>
 
       <div class="cover" :style="{ display: item }" ><!--:style="{ display: dodelq }"-->
@@ -118,6 +119,7 @@ name: "recharge-center",
 
     },
     rechargeS(){
+
       this.$axios.get("/sdk/api/pay",{
         params:{
           couponid: couponid, payid: '${payinfo.id}', payType: payType, sid: '${sid}'

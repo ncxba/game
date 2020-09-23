@@ -40,6 +40,7 @@ export default {
   },
   methods: {
     enterb() {
+      this.$router.push({name: 'user'});
       console.log(this.$refs.userphone1.value)
       let phone = this.$refs.userphone1.value
       let code = this.$refs.code.value
@@ -139,5 +140,9 @@ export default {
   line-height: 45px;
   padding: 0 15px;
   max-width: 150px;
+}
+#container{
+  width: 100%;
+  height: 100%;
 }
 </style>

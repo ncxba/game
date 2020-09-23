@@ -49,12 +49,12 @@ body{
     width : 100%;
     height : 100%;
   }
-  #container{
+/*  #container{
     width : 100%;
     height : 100%;
     transform-origin: top left;
     transform: rotate(90deg) translate(0,-100vmin);
-  }
+  }*/
 }
 @media screen and (orientation: landscape) {
  /* html{

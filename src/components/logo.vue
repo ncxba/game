@@ -1,4 +1,5 @@
 <template>
+  <!--<demo>-->
   <div id="container" style="position: relative">
     <div class="login">
       <!--<img src="./static/imgs/login_logo.png" src="" alt="" class="logo">-->
@@ -25,11 +26,17 @@
       {{toastText}}
     </div>
   </div>
+
+  <!--</demo>-->
 </template>
 
 <script>
+ // import uyh from "./uyh";
 export default {
   name: "logo",
+ /* components:{
+    "uyh":uyh
+  },*/
   data() {
     return {
       jiu: false,
@@ -105,5 +112,9 @@ export default {
   line-height: 45px;
   padding: 0 15px;
   max-width: 150px;
+}
+#container{
+  width: 100%;
+  height: 100%;
 }
 </style>

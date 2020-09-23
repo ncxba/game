@@ -32,26 +32,22 @@ import AdvisoryDetail3 from "@/components/advisoryDetail3"
 import AdvisoryDetail4 from "@/components/advisoryDetail4"
 import AdvisoryDetail5 from "@/components/advisoryDetail5"
 import QuestionDetails from "@/components/questionDetails"
+import Demo from "@/components/demo"
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
    /* {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },*/
-    {
-      path: '/',
+      path: '/logo',
       name: 'logo',
       component: Logo
-    },
-    /*{
+    },*/
+    {
       path: '/message',
       name: 'message',
       component: Message
-    },*/
+    },
     {
       path: '/bind',
       name: 'bind',
@@ -220,6 +216,28 @@ export default new Router({
       path: '/advisoryDetail5',
       name: 'advisoryDetail5',
       component: AdvisoryDetail5
+    },
+    {
+      path: '/',
+      name: 'demo',
+      component: Demo,
+     /* children: [
+        {
+          path: '/',
+          redirect:'/logo'
+        },
+        {
+          path: '/logo',
+          name: 'logo',
+          component: Logo
+        },
+        {
+          path: '/login_phone',
+          name: 'login_phone',
+          component: LoginPhone
+        },
+
+      ]*/
     }
   ]
 })
