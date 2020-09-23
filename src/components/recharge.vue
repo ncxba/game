@@ -2,12 +2,15 @@
   <div id="container">
     <div class="main">
       <!--        <jsp:include page="left.html"></jsp:include>-->
-      <div id="content2">
+      <div id="content2"  class="cain">
         <div class="top">
           <div class="back" onclick="history.back()"><img src="../imgs/back.png" alt=""></div>
           <h1>充值</h1>
           <div class="wen"><img src="../imgs/wenhao-2.png" alt=""></div>
         </div>
+
+      </div>
+      <div class="koop">
         <div class="select">
           <p>请选择充值金额：</p>
           <ul class="money">
@@ -146,5 +149,22 @@ name: "recharge",
   line-height: 45px;
   padding: 0 15px;
   max-width: 150px;
+}
+.cain{
+  background-color: #FFFFFF !important;
+  height: auto !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.main{
+  background-color: #FFFFFF;
+  padding-top: 0.84rem;
+}
+.koop{
+  overflow: auto;
+  height: 100%;
+  padding: 0 0.2rem
 }
 </style>

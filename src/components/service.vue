@@ -127,7 +127,7 @@ name: "service",
 @import "../style/base.css";
 @import "../style/user.css";
 .cain{
-  background-color: #efe3c5 !important;
+  background-color: #fff !important;
   height: auto !important;
   position: fixed;
   top: 0;
