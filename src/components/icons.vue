@@ -15,7 +15,7 @@ export default {
     // 距离上有下左的安全距离
     padding: {
       type: String,
-      default: '10 10 10 10'
+      default: '40 20 20 20'
     },
     // 初始位置距离底部的距离
     bottom: {

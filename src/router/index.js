@@ -134,11 +134,11 @@ export default new Router({
       name: 'recharge',
       component: Recharge
     },*/
-    {
+    /*{
       path: '/recharge-center',
       name: 'recharge-center',
       component: RechargeCenter
-    },
+    },*/
     /*{
       path: '/service',
       name: 'service',
@@ -252,6 +252,11 @@ export default new Router({
           path: '/cash-coupon',
           name: 'cash-coupon',
           component: Coupon
+        },
+        {
+          path: '/recharge-center',
+          name: 'recharge-center',
+          component: RechargeCenter
         },
 
       ]

@@ -17,9 +17,8 @@
             <p>测试demo</p>
           </div>
           <div class="Features">
-            <div class="Features-por" @click="trdgg(1)"><!--登录-->
-              <router-link to="/logo" :replace="true"  >登录</router-link></div>
-            <div class="Features-por">支付</div>
+            <div class="Features-por" id="logo" @click="trdgg($event)">登录</div><!--<router-link to="/logo" :replace="true"  >登录</router-link>-->
+            <div class="Features-por" id="recharge-center" @click="trdgg($event)">支付</div>
             <div class="Features-por">注销</div>
           </div>
           <div class="characterA">
@@ -35,14 +34,14 @@
           <!--<logo ref="logo"></logo>
           <router-view/>-->
           <keep-alive>
-            <router-view ref="logo" ></router-view>
+            <router-view :ref="routingDevice" ></router-view>
           </keep-alive>
         </div>
       </div>
 
     </div>
     <float-icons padding="10 10 60 10" class="icons-warp" v-show="piao">
-      <div class="float-icon-item"@click="iconsb">
+      <div class="float-icon-item" @click="iconsb">
         <img src="../imgs/tx.png" alt=""  />
       </div>
     </float-icons>
@@ -82,7 +81,8 @@ export default {
       true: true,
       piao:false,
       huns:false,
-      yunff:true
+      yunff:true,
+      routingDevice:''
     }
   },
 
@@ -97,9 +97,12 @@ export default {
     })
   },
   methods: {
-    trdgg(index) {
-       console.log(index)
-       this.thatnum = index;
+    trdgg(e) {
+       // console.log(index)
+      console.log(e.currentTarget.id)
+      this.routingDevice = e.currentTarget.id
+      this.$router.replace({path:'/'+e.currentTarget.id,query: {}}); //禁止页面回退到某个页面（如避免登录成功的用户返回到登录页）
+       this.thatnum = 1;
       this.abc = "block  !important"
       this.true1 = true
        // this.piao = true
@@ -214,7 +217,7 @@ export default {
   height: 75%;
   margin: 0 auto;
   background-color: #FFFFFF;
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
 }
 .icons-warp {
