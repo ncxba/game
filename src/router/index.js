@@ -33,31 +33,32 @@ import AdvisoryDetail4 from "@/components/advisoryDetail4"
 import AdvisoryDetail5 from "@/components/advisoryDetail5"
 import QuestionDetails from "@/components/questionDetails"
 import Demo from "@/components/demo"
+import Icons from "@/components/icons"
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-   /* {
+    /*{
       path: '/logo',
       name: 'logo',
       component: Logo
     },*/
-    {
+    /*{
       path: '/message',
       name: 'message',
       component: Message
-    },
+    },*/
     {
       path: '/bind',
       name: 'bind',
       component: Bind
     },
-    {
+    /*{
       path: '/cash-coupon',
       name: 'cash-coupon',
       component: Coupon
-    },
+    },*/
     {
       path: '/bind2',
       name: 'bind2',
@@ -99,14 +100,15 @@ export default new Router({
           path: '/questions',
           name: 'questions',
           component: Questions
-        }
+        },
+
       ]
     },
-    {
+    /*{
       path: '/login_phone',
       name: 'login_phone',
       component: LoginPhone
-    },
+    },*/
     {
       path: '/notice',
       name: 'notice',
@@ -127,11 +129,11 @@ export default new Router({
       name: 'prevent-detail',
       component: PreventDetail
     },
-    {
+    /*{
       path: '/recharge',
       name: 'recharge',
       component: Recharge
-    },
+    },*/
     {
       path: '/recharge-center',
       name: 'recharge-center',
@@ -157,11 +159,11 @@ export default new Router({
       name: 'welfare',
       component: Welfare
     },
-    {
+    /*{
       path: '/subaccount',
       name: 'subaccount',
       component: Subaccount
-    },
+    },*/
     {
       path: '/prevent2',
       name: 'prevent2',
@@ -215,13 +217,13 @@ export default new Router({
     {
       path: '/advisoryDetail5',
       name: 'advisoryDetail5',
-      component: AdvisoryDetail5
+      component: AdvisoryDetail5,
     },
     {
       path: '/',
       name: 'demo',
       component: Demo,
-     /* children: [
+      children: [
         {
           path: '/',
           redirect:'/logo'
@@ -236,8 +238,29 @@ export default new Router({
           name: 'login_phone',
           component: LoginPhone
         },
+        {
+          path: '/subaccount',
+          name: 'subaccount',
+          component: Subaccount
+        },
+        {
+          path: '/recharge',
+          name: 'recharge',
+          component: Recharge
+        },
+        {
+          path: '/cash-coupon',
+          name: 'cash-coupon',
+          component: Coupon
+        },
 
-      ]*/
+      ]
+    },
+    {
+      path: '/icons',
+      name: 'index',
+      component: Icons
     }
+
   ]
 })

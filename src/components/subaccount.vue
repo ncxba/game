@@ -121,7 +121,7 @@ export default {
 
     },*/
     logoAx(){
-      this.$router.push({name: 'logo'});
+      this.$router.replace({path:'/logo',query: {}});
     }
   }
 }
@@ -149,5 +149,27 @@ export default {
   line-height: 45px;
   padding: 0 15px;
   max-width: 150px;
+}
+#container {
+  width: 65vmax !important;
+  height: 75vmin !important;/*42vmax*/
+}
+.non{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/**/
+@media screen and (orientation: portrait) {
+  #container {
+    width: 141%;
+    height: 85%;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transform: rotate(90deg) translate(0,-100vmin);
+    transform: rotate(90deg) translate(0,-75vmin);
+  }
 }
 </style>

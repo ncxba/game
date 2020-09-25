@@ -26,32 +26,38 @@
     </li>
   </ul>-->
 
-  <div style="width: 100%;height: 100%;"><!-- height: 100%;-->
+  <div id="container" style="" class="lisr"><!-- width: 63.5vmax;"-->
+    <div class="main">
 
-      <div id="container" style=" width: auto;float: left;z-index: 99999 ;position: fixed;top: 0;left: 0;"><!---->
-        <div id="nav">
-          <a href="javascript:;" class="nav " v-for="(i,index) in tabs" :key="index"
-             :class="purr1 == index ? 'active' : ''" :data-index="index" @click="addClassName(index,$event)">
-            <router-link :to="i.url"  :replace="true">
-              <img class="hunfd" :src="i.url===$route.path?tabs[index].active : tabs[index].img">
-              <p class="haom">{{ i.text }}</p>
-            </router-link>
+      <ul id="nav">
+        <li v-for="(i,index) in tabs" :key="index"
+            :class="purr1 == index ? 'active' : ''" :data-index="index" @click="addClassName(index,$event)">
+          <a href="javascript:;" >
+            <img class="hunfd" :src="i.url===$route.path?tabs[index].active : tabs[index].img">
+            <p class="haom">{{ i.text }}</p>
           </a>
-        </div>
-      </div>
-    <keep-alive>
-      <router-view style="padding-left: 0.97rem;"></router-view><!--style="padding-left: 13vmin"-->
-    </keep-alive>
+        </li>
 
-
+      </ul>
+      <user class="gf" :class="purr == 0 ? 'active' : ''" data-index="1"></user>
+      <welfare class="gf" :class="purr == 1 ? 'active' : ''" data-index="2"></welfare>
+      <service class="gf" :class="purr == 2 ? 'active' : ''" data-index="3"></service>
+      <message class="gf" :class="purr == 3 ? 'active' : ''" data-index="4"></message>
+    </div>
   </div>
 
 
 </template>
 
 <script>
+import User from "./user";
+import Welfare from "./welfare";
+import Service from "./service";
+import Message from "./message";
+
 export default {
   name: "left",
+  components: {User, Welfare, Service, Message},
   props: ['tabName'],
   data() {
     return {
@@ -63,7 +69,8 @@ export default {
         {text: "客服", url: '/service', img: require("../imgs/nav3.png"), active: require('../imgs/nav3.png')},
         {text: "消息", url: '/message', img: require("../imgs/nav4.png"), active: require('../imgs/nav4.png')}
       ],
-      true:true
+      true: true,
+      purr: 0
     }
   },
   mounted() {
@@ -75,6 +82,7 @@ export default {
       this.thatnum = index;
       let thisCurr = e.detail.current || e.currentTarget.dataset.index || 0;
       this.purr1 = thisCurr;
+      this.purr = thisCurr
     }
   }
 }
@@ -104,5 +112,25 @@ body {
 .active p {
   color: #000;
   font-weight: bold;
+}
+
+.gf {
+  display: none;
+}
+
+.active {
+  display: block !important;
+}
+.lisr{
+  width: 60vmax !important;
+}
+@media screen and (orientation: portrait) {
+  /*.lisr{
+    position: fixed;top: 0;left: 0;
+  }*/
+
+  .lisr{
+    width: 63.5vmax !important;
+  }
 }
 </style>

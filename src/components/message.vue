@@ -1,6 +1,6 @@
 <template>
-  <div id="container">
-    <div class="main">
+  <!--<div id="container" style="width: 100%;">
+    <div class="main">-->
 
       <div id="content2">
         <div class="top">
@@ -12,8 +12,8 @@
           <p>暂时没有消息</p>
         </div>
       </div>
-    </div>
-  </div>
+    <!--</div>
+  </div>-->
 </template>
 
 <script>

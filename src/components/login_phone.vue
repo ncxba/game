@@ -14,16 +14,23 @@
         <div class="button" @click="enterb()">进入游戏</div>
       </form>
       <div class="fun">
-        <a @click="verification()">账号密码登录</a>
+      <!--  <a @click="verification()" >账号密码登录</a>--><!--onclick="history.back()"-->
+        <a ><router-link :replace="true" to="/logo">账号密码登录</router-link></a>
       </div>
     </div>
     <div class="toast" v-show="toastShow">
       {{toastText}}
     </div>
+    <!--<div class="non" v-show="gui">
+      <logo></logo>
+    </div>-->
   </div>
+
 </template>
 
 <script>
+import logo from "./logo"
+
 export default {
   name: "login_phone",
   data() {
@@ -33,14 +40,22 @@ export default {
       jiu: false,
       text: "手机号码不能为空",
       toastShow: false,
-      toastText: ''
+      toastText: '',
+      gui:false,
+      piao:false
     }
+  },
+  components:{
+    "logo":logo,
   },
   created() {
   },
   methods: {
     enterb() {
-      this.$router.push({name: 'user'});
+      this.piao = true
+        // this.$router.push({name: '/subaccount'});
+      // this.$router.push({path:'/subaccount',query: {}});
+      this.$router.replace({path:'/subaccount',query: {}});
       console.log(this.$refs.userphone1.value)
       let phone = this.$refs.userphone1.value
       let code = this.$refs.code.value
@@ -111,8 +126,9 @@ export default {
 
     },
     verification() {
-      this.$router.push({name: 'logo'});
-
+       this.$router.push({name: 'logo'});
+      console.log(122)
+      //this.gui = true
     }
   }
 }
@@ -141,8 +157,26 @@ export default {
   padding: 0 15px;
   max-width: 150px;
 }
-#container{
+#container {
+  width: 65vmax !important;
+  height: 75vmin !important;/*42vmax*/
+}
+.non{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+}
+/**/
+@media screen and (orientation: portrait) {
+  #container {
+    width: 141%;
+    height: 85%;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transform: rotate(90deg) translate(0,-100vmin);
+    transform: rotate(90deg) translate(0,-75vmin);
+  }
 }
 </style>

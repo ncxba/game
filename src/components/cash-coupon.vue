@@ -1,11 +1,10 @@
 <template>
-  <div id="container">
-    <div class="main">
-      <!--        <jsp:include page="left.html"></jsp:include>-->
-
+  <!--<div id="container">
+    <div class="main">-->
+      <div id="content" style="background-color: #FFFFFF;" >
       <div id="content2">
         <div class="top">
-          <div class="back" onclick="history.back()"><img src="../imgs/back.png" alt=""></div>
+          <div class="back"  @click="bano"><img src="../imgs/back.png" alt=""></div><!--onclick="history.back()"-->
           <h1>我的代金券</h1>
         </div>
         <ul class="welfare-head">
@@ -29,11 +28,13 @@
         </div>
 
       </div>
-    </div>
-  </div>
+      </div>
+    <!--</div>
+  </div>-->
 </template>
 
 <script>
+import Util from "../assets/js/util";
 export default {
   name: "cash-coupon",
   data() {
@@ -48,6 +49,10 @@ export default {
       let thisCurr = e.detail.current || e.currentTarget.dataset.index || 0;
       this.curr = thisCurr;
     },
+    bano(){
+      history.back()
+      Util.$emit('user',"user")
+    }
   }
 }
 </script>
@@ -69,5 +74,14 @@ export default {
   text-align: center;
   margin-top: 0.2rem;
   font-size: 0.24rem;
+}
+.lisr{
+  width: 60vmax !important;
+}
+@media screen and (orientation: portrait) {
+
+  .lisr{
+    width: 63.5vmax !important;
+  }
 }
 </style>
