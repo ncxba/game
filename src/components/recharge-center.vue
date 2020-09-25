@@ -188,3 +188,8 @@ name: "recharge-center",
   }
 }
 </style>
+<!--
+18:58:22.693: [game] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/master:master
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/ncxba/game.git/'
+-->
