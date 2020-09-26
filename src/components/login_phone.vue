@@ -132,6 +132,9 @@ export default {
     }
   }
 }
+/*
+* 17:12:33.492: [game] git -c credential.helper= -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/master:master
+* */
 </script>
 
 <style scoped>
