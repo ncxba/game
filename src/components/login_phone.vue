@@ -1,5 +1,6 @@
 <template>
   <div id="container" style="position: relative">
+
     <div class="login">
       <img src="../imgs/login_logo.png" alt="" class="logo">
       <form class="box">
@@ -57,12 +58,12 @@ export default {
       // this.$router.push({path:'/subaccount',query: {}});
       this.$router.replace({path:'/subaccount',query: {}});
       console.log(this.$refs.userphone1.value)
-      let phone = this.$refs.userphone1.value
+      let username = this.$refs.userphone1.value
       let code = this.$refs.code.value
-      let num = Number(phone)
-      if (phone === "") {
+      let num = Number(username)
+      if (username === "") {
         this.toast("手机号码不能为空!")
-      } else if (phone.length !== 11) {
+      } else if (username.length !== 11) {
         this.toast("请输入11位手机号码!")
       } else if (!/^1[34578]\d{9}$/.test(num)) {
         this.toast("请输入有效的手机号码!")
@@ -74,13 +75,12 @@ export default {
       }
 
      else{
-        let data = {phone: phone, code: code, sid: '${sid}'};
-        this.$axios.get("/sdk/api/login",{
-          params:{
-            data
-          }
-        }).then(res=>{
-
+        this.$axios({
+          url:"http://192.168.1.6:8080/api/h5/index",
+          method:'get',
+          params:{username: username, code: code, pid:4,gameid:100001,imei:1,apikey:1,sign:1},
+        }).then(function (res) {
+          console.log(res)
         })
       }
 
@@ -104,11 +104,11 @@ export default {
       else if (!/^1[34578]\d{9}$/.test(num)) {
         this.toast("请输入有效的手机号码!")
       } else {
-        this.$axios.get("/sdk/api/smscode",{
-          params:{
-            phone: phone, sid: '${sid}'
-          }
-        }).then(res =>{
+        this.$axios({
+          url:"http://192.168.1.6:8080/api/h5/index",
+          method:'get',
+          params:{username: phone,  pid:6,gameid:100001,imei:1,apikey:1,sign:1},
+        }).then(function (res) {
           console.log(res)
         })
         this.btnBool = true;

@@ -37,6 +37,8 @@
 <script>
 import login_ph from "./login_phone";
 import Util from "../assets/js/util";
+ //import {userLogin} from "../api/axios-api";
+ import {userInfo} from "../api/axios-api";
 
 export default {
   name: "logo",
@@ -50,34 +52,50 @@ export default {
       text: "手机号码不能为空",
       toastShow: false,
       toastText: '',
-      gui: false
+      gui: false,
+      user:{}
     }
   },
   created() {
   },
   methods: {
-    enterA() {
-      Util.$emit('demo',"demo")
+    async enterA() {/*async*/
+      // Util.$emit('demo',"demo")
       console.log(this.$refs.userphone1.value)
-      let phone = this.$refs.userphone1.value
-      let code = this.$refs.userpass.value
-      let num = Number(phone)
-      if (phone === "") {
+      let username = this.$refs.userphone1.value
+      let password = this.$refs.userpass.value
+      let num = Number(username)
+      if (username === "") {
         this.toast("手机号码不能为空!")
-      } else if (phone.length !== 11) {
+      } else if (username.length !== 11) {
         this.toast("请输入11位手机号码!")
       } else if (!/^1[34578]\d{9}$/.test(num)) {
         this.toast("请输入有效的手机号码!")
-      } else if (code === "") {
+      } else if (password === "") {
         this.toast("密码不能为空!")
       } else {
-        this.$axios.get("/api/h5/index", {
-          params: {
-            phone: phone, code: code
-          }
-        }).then(res => {
-         /* Util.$emit('demo',"demo")*/
+        /*let params = {
+          username: username, password: password, pid:4,gameid:100001
+        }
+        let res = await userInfo(params);
+        console.log(res);*/
+
+        /*for (var i = 1; i <= 10; i++) {
+          console.log(random(1, 100));
+        }*/
+        this.$axios({
+          url:"http://192.168.1.6:8080/api/h5/index",
+          method:'get',
+            params:{username: username, password: password, pid:4,gameid:100001,imei:1,apikey:1,sign:1},
+           // data:{phone: phone, code: code,pid:"4",gameid:"100001"},
+
+        }).then(function (res) {
+          console.log(res)
+          Util.$emit('demo',"demo")
         })
+
+
+
       }
 
 

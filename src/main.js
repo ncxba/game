@@ -5,8 +5,9 @@ import App from './App'
 import router from './router'
 import "lib-flexible"
 import axios from "axios"
+import ElementUI from 'element-ui'
 
-
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios;
 /* eslint-disable no-new */
