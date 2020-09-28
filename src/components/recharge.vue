@@ -169,10 +169,9 @@ export default {
 .cain {
   background-color: #FFFFFF !important;
   height: auto !important;
-  /*  position: fixed;
-    top: 0;
-    left: 0;*/
-  width: 100%;
+  /*width: 100%;*/
+  position: fixed;
+  width: 52vmax;
 }
 
 .main {
@@ -184,6 +183,7 @@ export default {
   overflow-x: hidden;
   height: 100%;
   padding: 0 0.2rem;
+  padding-top: 6vmax;
 }
 .lisr{
   width: 60vmax !important;

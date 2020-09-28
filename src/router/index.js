@@ -37,6 +37,7 @@ import Icons from "@/components/icons"
 
 Vue.use(Router)
 
+
 export default new Router({
   routes: [
     /*{
@@ -49,26 +50,26 @@ export default new Router({
       name: 'message',
       component: Message
     },*/
-    {
+    /*{
       path: '/bind',
       name: 'bind',
       component: Bind
-    },
+    },*/
     /*{
       path: '/cash-coupon',
       name: 'cash-coupon',
       component: Coupon
     },*/
-    {
+    /*{
       path: '/bind2',
       name: 'bind2',
       component: Bind2
-    },
-    {
+    },*/
+    /*{
       path: '/change-password',
       name: 'change-password',
       component: Changepassword
-    },
+    },*/
     {
       path: '/left',
       name: 'left',
@@ -119,16 +120,16 @@ export default new Router({
       name: 'paysucceed',
       component: Paysucceed
     },
-    {
+    /*{
       path: '/prevent',
       name: 'prevent',
       component: Prevent
-    },
-    {
+    },*/
+    /*{
       path: '/prevent-detail/:uid',
       name: 'prevent-detail',
       component: PreventDetail
-    },
+    },*/
     /*{
       path: '/recharge',
       name: 'recharge',
@@ -144,11 +145,11 @@ export default new Router({
       name: 'service',
       component: Service,
     },*/
-    {
+    /*{
       path: '/take-note',
       name: 'take-note',
       component: TakeNote
-    },
+    },*/
     {
       path: '/user',
       name: 'user',
@@ -164,11 +165,11 @@ export default new Router({
       name: 'subaccount',
       component: Subaccount
     },*/
-    {
+    /*{
       path: '/prevent2',
       name: 'prevent2',
       component: Prevent2
-    },
+    },*/
     {
       path: '/problemSolved',
       name: 'problemSolved',
@@ -239,7 +240,7 @@ export default new Router({
           component: LoginPhone
         },
         {
-          path: '/subaccount',
+          path: '/subaccount/:regtime/:password/:gender/:phone/:adminid/:id/:username/:token/',
           name: 'subaccount',
           component: Subaccount
         },
@@ -258,6 +259,36 @@ export default new Router({
           name: 'recharge-center',
           component: RechargeCenter
         },
+        {
+          path: '/take-note',
+          name: 'take-note',
+          component: TakeNote
+        },
+        {
+          path: '/change-password/:id',
+          name: 'change-password',
+          component: Changepassword
+        },
+        {
+          path: '/bind',
+          name: 'bind',
+          component: Bind
+        },
+        {
+          path: '/bind2',
+          name: 'bind2',
+          component: Bind2
+        },
+        {
+          path: '/prevent',
+          name: 'prevent',
+          component: Prevent
+        },
+        {
+          path: '/prevent-detail/:uid',
+          name: 'prevent-detail',
+          component: PreventDetail
+        },
 
       ]
     },
@@ -269,3 +300,4 @@ export default new Router({
 
   ]
 })
+

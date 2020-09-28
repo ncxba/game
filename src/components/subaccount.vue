@@ -12,11 +12,11 @@
                    placeholder="<c:if test="${empty subuserlist}">请先注册子账号</c:if><c:if test="${!empty subuserlist}">请选择子帐号</c:if>"
                    autocomplete="off" disableautocomplete readonly>-->
             <input type="text" id="phone" placeholder="请选择子帐号" ref="phoneX" @click="select" :value="tests">
-            <div class="account" v-show="tesa">
+            <!--<div class="account" v-show="tesa">
               <ul>
                 <li v-model="tests" :title="test" @click="shutdown($event)">{{ test }}</li>
               </ul>
-            </div>
+            </div>-->
           </div>
           <div class="login-btn">
             <div class="btn" @click="game" style="float: left;">进入游戏</div>
@@ -37,7 +37,7 @@
           </div>
           <div class="login-btn">
             <div class="back" @click="returna" style="float: left;">返回</div>
-            <div class="reg-account" @click="determine" style="float: right;">确定</div>
+            <div class="reg-account" @click="determine($event)" :id="goid" :title="goneme"  style="float: right;"><div :id="gotoken"></div>确定</div>
           </div>
         </form>
         <div class="fun">
@@ -62,10 +62,19 @@ export default {
       porbox: true,
       porcox: false,
       toastShow: false,
-      toastText: ''
+      toastText: '',
+      goid:0,
+      goneme:"",
+      gotoken:""
     }
   },
+  watch:{
+  },
   created() {
+    console.log(this.$route.query)
+    this.goid = this.$route.query.regtime
+    this.goneme = this.$route.query.username
+    this.gotoken = this.$route.query.token
   },
   methods: {
     select() {
@@ -84,19 +93,31 @@ export default {
       this.porbox = true
       this.porcox = false
     },
-    determine() {
+    determine(e) {
+      console.log(e.currentTarget.id)
+      console.log(e.currentTarget.title)
+      // console.log( e.currentTarget.firstElementChild)
+      console.log( e.currentTarget.firstElementChild.id)
       let phone = this.$refs.account.value
-      if (typeof phone == "undefined" || phone == null || phone == "") {
-        this.toast("请输入有效账号!")
-        return;
-      }
-      this.$axios.get("/sdk/api/regsubuser", {
-        params: {
-          account: phone, token: '${token}', sid: '${sid}'
-        }
-      }).then(res => {
+      this.$axios({
+        url:"http://192.168.1.12:8080/api/h5/index",
+        method:'get',
+        params:{account: phone, pid:7,gameid:100001,imei:'imei',regtime:e.currentTarget.id,username:e.currentTarget.title,token:e.currentTarget.firstElementChild.id},
+      }).then(function (res) {
         console.log(res)
+/*
+* this.goid = this.$route.query.regtime
+    this.goneme = this.$route.query.username
+    this.gotoken = this.$route.query.token
+* */
+
       })
+      /*if (typeof phone == "undefined" || phone == null || phone == "") {
+        this.toast("请输入有效账号!")
+      } else {
+
+      }*/
+
     },
     toast(e) {
       let self = this

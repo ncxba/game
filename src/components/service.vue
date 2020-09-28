@@ -109,7 +109,11 @@ export default {
 .cain {
   background-color: #efe3c5 !important;
   height: auto !important;
-  width: 100%;
+  /*width: 100%;*/
+  position: fixed;
+  width: 52vmax;
+  z-index: 9;
+  overflow: hidden;
   /*position: fixed;
   top: 0;
   left: 0;
@@ -126,6 +130,7 @@ export default {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  padding-top: 6vmax;
 }
 
 .top {

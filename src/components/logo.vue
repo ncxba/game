@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     async enterA() {/*async*/
-      // Util.$emit('demo',"demo")
+
       console.log(this.$refs.userphone1.value)
       let username = this.$refs.userphone1.value
       let password = this.$refs.userpass.value
@@ -80,20 +80,18 @@ export default {
         let res = await userInfo(params);
         console.log(res);*/
 
-        /*for (var i = 1; i <= 10; i++) {
-          console.log(random(1, 100));
-        }*/
         this.$axios({
-          url:"http://192.168.1.6:8080/api/h5/index",
+          url:"http://192.168.1.12:8080/api/h5/index",
           method:'get',
             params:{username: username, password: password, pid:4,gameid:100001,imei:1,apikey:1,sign:1},
            // data:{phone: phone, code: code,pid:"4",gameid:"100001"},
 
         }).then(function (res) {
           console.log(res)
-          Util.$emit('demo',"demo")
+           Util.$emit('demo',"demo")
+          Util.$emit("user",res)
         })
-
+/*args*/
 
 
       }

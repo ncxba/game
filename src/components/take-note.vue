@@ -1,10 +1,10 @@
 <template>
-  <div id="container">
-    <div class="main">
-      <!--<jsp:include page="left.html"></jsp:include>-->
+<!--  <div id="container">
+    <div class="main">-->
+  <div id="content" style="background-color: #FFFFFF;">
       <div id="content2">
         <div class="top">
-          <div class="back" onclick="history.back()"><img src="../imgs/back.png" alt=""></div>
+          <div class="back"   @click="bano"><img src="../imgs/back.png" alt=""></div>
           <ul class="note">
             <li class="" id="recharge" :class="coor == 1 ? 'active' : ''" data-index="1" @click="haos($event)">充值记录</li>
             <li id="consume" :class="coor == 2 ? 'active' : ''" data-index="2" @click="haos($event)">消费记录</li>
@@ -21,12 +21,7 @@
               <td>充值金额</td>
             </tr>
             <input type="text" hidden name="rp"  value="1" id="rp" ref="rp"/>
-            <!--<c:forEach items="${pagelist.content}" var="var" varStatus="s">
-              <tr>
-                <td><fmt:formatDate value="${var.createtime}" pattern="MM月dd日 HH:mm"/></td>
-                <td>${var.amount}元</td>
-              </tr>
-            </c:forEach>-->
+
           </table>
           <div class="loading">据加载中，请稍等...</div>
           <div class="loading_finished" style="display: none">数据加载完毕...</div>
@@ -38,22 +33,19 @@
               <td>消费金额</td>
             </tr>
             <input type="text" hidden name="cp" value="1" id="cp" ref="cp"/>
-            <!--<c:forEach items="${pagelist.content}" var="var" varStatus="s">
-              <tr>
-                <td><fmt:formatDate value="${var.createtime}" pattern="MM月dd日 HH:mm"/></td>
-                <td>${var.amount}元</td>
-              </tr>
-            </c:forEach>-->
           </table>
           <div class="loading">据加载中，请稍等...</div>
           <div class="loading_finished" style="display: none">数据加载完毕...</div>
         </div>
       </div>
-    </div>
   </div>
+      <!--</div>
+  </div>-->
 </template>
 
 <script>
+import Util from "../assets/js/util";
+
 export default {
   name: "take-note",
   data() {
@@ -87,6 +79,10 @@ export default {
       }).catch(function (error) {
 
       })
+    },
+    bano(){
+      history.back()
+      Util.$emit('user',"user")
     }
   }
 }
@@ -100,5 +96,15 @@ export default {
 }
 .arrc{
   display: block !important;
+}
+.lisr {
+  width: 60vmax !important;
+}
+
+@media screen and (orientation: portrait) {
+
+  .lisr {
+    width: 63.5vmax !important;
+  }
 }
 </style>

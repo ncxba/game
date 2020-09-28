@@ -9,10 +9,10 @@
           <input type="text" id="phone" placeholder="请输入手机号" value="" ref="userphone1">
         </div>
         <div class="row">
-          <input type="text" id="code" placeholder="输入短信验证码" class="fill-code" value="" ref="code">
+          <input type="text" id="code"  placeholder="输入短信验证码" class="fill-code" value="" ref="code">
           <div class="code" @click="code()">{{yanzhengma}}</div>
         </div>
-        <div class="button" @click="enterb()">进入游戏</div>
+        <div class="button"  :id="moko"  @click="enterb($event)">进入游戏</div>
       </form>
       <div class="fun">
       <!--  <a @click="verification()" >账号密码登录</a>--><!--onclick="history.back()"-->
@@ -43,7 +43,8 @@ export default {
       toastShow: false,
       toastText: '',
       gui:false,
-      piao:false
+      piao:false,
+      moko:""
     }
   },
   components:{
@@ -52,11 +53,22 @@ export default {
   created() {
   },
   methods: {
-    enterb() {
+    enterb(e) {
+      console.log(e.currentTarget.id)
       this.piao = true
         // this.$router.push({name: '/subaccount'});
       // this.$router.push({path:'/subaccount',query: {}});
-      this.$router.replace({path:'/subaccount',query: {}});
+      // this.$router.replace({path:'/subaccount',query: {}});
+      /*
+      * password: ""
+gender: 0
+phone: "18376841093"
+adminid: 1
+id: 8
+username: "18376841093"
+token: "7394bdbbf8464ad4af61137ac4b8003e"
+      * */
+     //  this.$router.replace({path:'/subaccount',name:'subaccount',query: {regtime:"13212314",password:"0",gender:"0",phone:"18376841093",adminid:"1",id:"8",username:"18376841093",token:"7394bdbbf8464ad4af61137ac4b8003e"}});
       console.log(this.$refs.userphone1.value)
       let username = this.$refs.userphone1.value
       let code = this.$refs.code.value
@@ -72,15 +84,23 @@ export default {
      else if (code === "undefined" || code === null || code === "") {
         console.log("请输入验证码!")
         this.toast("请输入验证码!")
+      } else if (code !== e.currentTarget.id) {
+        this.toast("验证码输入错误，请重新输入验证码!")
       }
 
      else{
+       let _this = this
         this.$axios({
-          url:"http://192.168.1.6:8080/api/h5/index",
+           url:"http://192.168.1.12:8080/api/h5/index",
+           // url:"",
           method:'get',
-          params:{username: username, code: code, pid:4,gameid:100001,imei:1,apikey:1,sign:1},
+          params:{phone: username, user_code:code, code: e.currentTarget.id, pid:6,gameid:100001,imei:'imei'},
         }).then(function (res) {
           console.log(res)
+          if (res.data.code === 1){
+            _this.$router.replace({path:'/subaccount',name:'subaccount',query: {regtime:res.data.data.user.regtime,password:res.data.data.user.password,gender:res.data.data.user.gender,phone:res.data.data.user.phone,adminid:res.data.data.user.adminid,id:res.data.data.user.id,username:res.data.data.user.username,token:res.data.data.user.token}});
+          }
+
         })
       }
 
@@ -94,6 +114,9 @@ export default {
       }, 1500)
     },
     code(){
+      let a2 = "手机号码不能为空123456!"
+      console.log( parseInt(a2.substring(1)))
+      console.log( parseInt(a2.substring(1).substring(1).substring(1)))
       let phone = this.$refs.userphone1.value
       let num = Number(phone)
       if (phone === "") {
@@ -104,12 +127,16 @@ export default {
       else if (!/^1[34578]\d{9}$/.test(num)) {
         this.toast("请输入有效的手机号码!")
       } else {
+        let _this = this
         this.$axios({
-          url:"http://192.168.1.6:8080/api/h5/index",
+          url:"http://192.168.1.12:8080/api/h5/index",
           method:'get',
-          params:{username: phone,  pid:6,gameid:100001,imei:1,apikey:1,sign:1},
+          params:{phone: phone,  pid:5,gameid:100001,imei:'imei'},
         }).then(function (res) {
-          console.log(res)
+          console.log(res.data.msg)
+          //提取验证码 //13600090714
+          _this.moko = res.data.msg
+          console.log(_this.moko)
         })
         this.btnBool = true;
         let i = 60;
@@ -158,7 +185,7 @@ export default {
   height: 45px;
   line-height: 45px;
   padding: 0 15px;
-  max-width: 150px;
+  max-width: 250px;
 }
 #container {
   width: 65vmax !important;

@@ -1,7 +1,7 @@
 <template>
   <!--<div id="container" style="width: 100%;">
     <div class="main">-->
-  <div id="content">
+  <div id="contentg">
 
 
     <div id="content2" class="cain"><!--class="cain"-->
@@ -170,6 +170,11 @@ export default {
 /*.main{
   padding-top: 1rem;
 }*/
+#contentg{
+  height: 100%;
+  /* overflow: scroll; */
+  background-color: #edf3f2;
+}
 .coupon {
   padding-bottom: 1rem;
 }

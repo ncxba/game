@@ -1,8 +1,10 @@
 <template>
-  <div id="container" style="background: #000;">
+  <!--<div id="container" style="background: #000;">-->
+  <div id="content" style="background: #000;" >
+
     <div class="frame">
       <div class="title">
-        <div class="back" onclick="history.back()"><img src="../imgs/back.png" alt=""></div>
+        <div class="back" @click="bano"><img src="../imgs/back.png" alt=""></div>
         <h1>详情</h1>
       </div>
       <div class="con">
@@ -19,20 +21,24 @@
       </div>
     </div>
   </div>
+  <!--</div>-->
 </template>
 
 <script>
-export default {
-name: "prevent-detail",
-  data() {
-    return {
+import Util from "../assets/js/util";
 
-    }
+export default {
+  name: "prevent-detail",
+  data() {
+    return {}
   },
   created() {
   },
-  methods:{
-
+  methods: {
+    bano() {
+      history.back()
+      Util.$emit('user', "user")
+    },
   }
 }
 </script>

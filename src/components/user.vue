@@ -34,19 +34,19 @@
       </li>
     </ul>
     <ul class="item">
-      <li @click="$router.push('/take-note')">
+      <li @click="recharged($event)" id="take-note">
         <p>订单记录</p>
         <div class="go"><a><img src="../imgs/go.png" alt=""></a></div>
       </li>
-      <li @click="$router.push('/change-password')">
+      <li   @click="change($event)" id="change-password">
         <p>修改密码</p>
         <div class="go"><a><img src="../imgs/go.png" alt=""></a></div>
       </li>
-      <li @click="$router.push('/bind')">
+      <li  @click="recharged($event)" id="bind">
         <p>换绑手机</p>
         <div class="go"><a><img src="../imgs/go.png" alt=""></a></div>
       </li>
-      <li @click="$router.push('/prevent')">
+      <li @click="recharged($event)" id="prevent">
         <p>防沉迷系统</p>
         <div class="go"><a><img src="../imgs/go.png" alt=""></a></div>
       </li>
@@ -89,6 +89,12 @@ export default {
       this.bop = true
       this.abc = "block !important"
 
+    },
+    change(e){
+      console.log(e.currentTarget.id)
+      this.moop = e.currentTarget.id
+      this.$router.push({path: '/change-password', query: {id:"121"}, name: 'change-password'});
+      this.abc = "block !important"
     }
   }
 }

@@ -1,18 +1,17 @@
 <template>
   <div id="container">
     <div class="main">
-      <!--        <jsp:include page="left.html"></jsp:include>-->
 
       <div id="content2">
         <div class="top">
-          <div class="back" onclick="history.back()"><img src="../imgs/back.png" alt=""></div>
+          <div class="back"  @click="bano" ><img src="../imgs/back.png" alt=""></div>
           <h1>防沉迷系统</h1>
         </div>
         <div class="prevent2">
 
           <div class="limit">根据国家相关规定，请完成实名认证；未成年玩家将受到以下游戏健康限制：</div>
           <p>1.某些游戏时间段将受到限制</p>
-          <p>2.游戏充值金额将受到限制 &nbsp;&nbsp;&nbsp; <a  @click="$router.push('/prevent-detail')">查看详情&gt</a></p>
+          <p>2.游戏充值金额将受到限制 &nbsp;&nbsp;&nbsp; <a   @click="recharged($event)" id="prevent-detail">查看详情&gt</a></p>
           <form action="">
             <input type="text" placeholder="请输入真实姓名" ref="name">
             <input type="text" placeholder="请输入身份证号" ref="IDNumber">
@@ -32,16 +31,23 @@
     <div class="toast" v-show="toastShow">
       {{toastText}}
     </div>
+    <keep-alive>
+      <router-view style="position: absolute;top: 0;left: 0; width: 100%;" :ref="moop"  :style="{display:abc}"></router-view><!--ref="recharge"v-show="bop" -->
+    </keep-alive>
   </div>
 </template>
 
 <script>
+import Util from "../assets/js/util";
+
 export default {
   name: "prevent2",
   data() {
     return {
       toastShow: false,
-      toastText: ''
+      toastText: '',
+      abc: "none",
+      moop:""
     }
   },
   created() {
@@ -64,6 +70,17 @@ export default {
       }).then(res => {
 
       })
+    },
+    recharged(e) {
+      console.log(e)
+      console.log(e.currentTarget.id)
+      this.moop = e.currentTarget.id
+      this.$router.push({path: '/'+e.currentTarget.id, query: {}, name: e.currentTarget.id});
+      this.abc = "block !important"
+    },
+    bano(){
+      history.back()
+      Util.$emit('user',"user")
     },
     toast (e) {
       let self = this
