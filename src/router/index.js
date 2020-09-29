@@ -97,11 +97,7 @@ export default new Router({
           name: 'service',
           component: Service,
         },
-        {
-          path: '/questions',
-          name: 'questions',
-          component: Questions
-        },
+
 
       ]
     },
@@ -240,7 +236,7 @@ export default new Router({
           component: LoginPhone
         },
         {
-          path: '/subaccount/:regtime/:password/:gender/:phone/:adminid/:id/:username/:token/',
+          path: '/subaccount/:token/',
           name: 'subaccount',
           component: Subaccount
         },
@@ -265,7 +261,7 @@ export default new Router({
           component: TakeNote
         },
         {
-          path: '/change-password/:id',
+          path: '/change-password/:token',
           name: 'change-password',
           component: Changepassword
         },
@@ -288,6 +284,11 @@ export default new Router({
           path: '/prevent-detail/:uid',
           name: 'prevent-detail',
           component: PreventDetail
+        },
+        {
+          path: '/questions',
+          name: 'questions',
+          component: Questions
         },
 
       ]

@@ -31,7 +31,7 @@
 
 <script>
 import logo from "./logo"
-
+import Util from "../assets/js/util";
 export default {
   name: "login_phone",
   data() {
@@ -56,18 +56,8 @@ export default {
     enterb(e) {
       console.log(e.currentTarget.id)
       this.piao = true
-        // this.$router.push({name: '/subaccount'});
-      // this.$router.push({path:'/subaccount',query: {}});
       // this.$router.replace({path:'/subaccount',query: {}});
-      /*
-      * password: ""
-gender: 0
-phone: "18376841093"
-adminid: 1
-id: 8
-username: "18376841093"
-token: "7394bdbbf8464ad4af61137ac4b8003e"
-      * */
+
      //  this.$router.replace({path:'/subaccount',name:'subaccount',query: {regtime:"13212314",password:"0",gender:"0",phone:"18376841093",adminid:"1",id:"8",username:"18376841093",token:"7394bdbbf8464ad4af61137ac4b8003e"}});
       console.log(this.$refs.userphone1.value)
       let username = this.$refs.userphone1.value
@@ -84,21 +74,21 @@ token: "7394bdbbf8464ad4af61137ac4b8003e"
      else if (code === "undefined" || code === null || code === "") {
         console.log("请输入验证码!")
         this.toast("请输入验证码!")
-      } else if (code !== e.currentTarget.id) {
-        this.toast("验证码输入错误，请重新输入验证码!")
       }
 
      else{
        let _this = this
         this.$axios({
-           url:"http://192.168.1.12:8080/api/h5/index",
+           url:"http://192.168.1.29:8080/api/h5/index",
            // url:"",
           method:'get',
-          params:{phone: username, user_code:code, code: e.currentTarget.id, pid:6,gameid:100001,imei:'imei'},
+          params:{phone: username, user_code:code,  pid:6,gameid:100001,imei:'imei'},
         }).then(function (res) {
           console.log(res)
           if (res.data.code === 1){
-            _this.$router.replace({path:'/subaccount',name:'subaccount',query: {regtime:res.data.data.user.regtime,password:res.data.data.user.password,gender:res.data.data.user.gender,phone:res.data.data.user.phone,adminid:res.data.data.user.adminid,id:res.data.data.user.id,username:res.data.data.user.username,token:res.data.data.user.token}});
+            _this.$router.replace({path:'/subaccount',name:'subaccount',query: {token:res.data.data.user.token}});
+           console.log(res.data.data.sub_user)
+           // Util.$emit("subaccount",res.data.data.sub_user)
           }
 
         })
@@ -114,9 +104,6 @@ token: "7394bdbbf8464ad4af61137ac4b8003e"
       }, 1500)
     },
     code(){
-      let a2 = "手机号码不能为空123456!"
-      console.log( parseInt(a2.substring(1)))
-      console.log( parseInt(a2.substring(1).substring(1).substring(1)))
       let phone = this.$refs.userphone1.value
       let num = Number(phone)
       if (phone === "") {
@@ -129,14 +116,14 @@ token: "7394bdbbf8464ad4af61137ac4b8003e"
       } else {
         let _this = this
         this.$axios({
-          url:"http://192.168.1.12:8080/api/h5/index",
+          url:"http://192.168.1.29:8080/api/h5/index",
           method:'get',
           params:{phone: phone,  pid:5,gameid:100001,imei:'imei'},
         }).then(function (res) {
-          console.log(res.data.msg)
+         // console.log(res.data.msg)
           //提取验证码 //13600090714
           _this.moko = res.data.msg
-          console.log(_this.moko)
+         // console.log(_this.moko)
         })
         this.btnBool = true;
         let i = 60;

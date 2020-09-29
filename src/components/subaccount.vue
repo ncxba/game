@@ -8,18 +8,15 @@
           <h2>子账号登录</h2>
           <div class="row">
             <input type="text" id="token" value="" hidden>
-            <!--<input type="text" id="phone"
-                   placeholder="<c:if test="${empty subuserlist}">请先注册子账号</c:if><c:if test="${!empty subuserlist}">请选择子帐号</c:if>"
-                   autocomplete="off" disableautocomplete readonly>-->
             <input type="text" id="phone" placeholder="请选择子帐号" ref="phoneX" @click="select" :value="tests">
-            <!--<div class="account" v-show="tesa">
+            <div class="account" style="height: auto;" v-show="tesa">
               <ul>
-                <li v-model="tests" :title="test" @click="shutdown($event)">{{ test }}</li>
+                <li :title="item.account" v-for="(item, index) in nolist" :key="index" @click="shutdown($event)">{{ item.account }}</li>
               </ul>
-            </div>-->
+            </div>
           </div>
           <div class="login-btn">
-            <div class="btn" @click="game" style="float: left;">进入游戏</div>
+            <div class="btn" @click="game" :title="gotoken" style="float: left;">进入游戏</div>
             <div class="reg" @click="registered" style="float: right;">子账号注册</div>
           </div>
         </form>
@@ -52,12 +49,14 @@
 </template>
 
 <script>
+import Util from "../assets/js/util";
+
 export default {
   name: "subaccount",
   data() {
     return {
-      tesa: false,
-      test: "test",
+      tesa: true,
+      test: "",
       tests: "",
       porbox: true,
       porcox: false,
@@ -65,16 +64,33 @@ export default {
       toastText: '',
       goid:0,
       goneme:"",
-      gotoken:""
+      gotoken:"",
+      nolist:[],
+      phone12:""
     }
   },
   watch:{
+  },
+  mounted() {
+
+
   },
   created() {
     console.log(this.$route.query)
     this.goid = this.$route.query.regtime
     this.goneme = this.$route.query.username
     this.gotoken = this.$route.query.token
+    this.phone12 = this.$route.query.phone
+    let _this = this
+    this.$axios({
+      url:"http://192.168.1.29:8080/api/h5/index",
+      method:'get',
+      params:{pid:13,gameid:100001,phone:this.$route.query.phone},
+    }).then(function (res) {
+      console.log(res)
+      _this.nolist = res.data.data.sub_user
+
+    })
   },
   methods: {
     select() {
@@ -100,16 +116,11 @@ export default {
       console.log( e.currentTarget.firstElementChild.id)
       let phone = this.$refs.account.value
       this.$axios({
-        url:"http://192.168.1.12:8080/api/h5/index",
+        url:"http://192.168.1.29:8080/api/h5/index",
         method:'get',
         params:{account: phone, pid:7,gameid:100001,imei:'imei',regtime:e.currentTarget.id,username:e.currentTarget.title,token:e.currentTarget.firstElementChild.id},
       }).then(function (res) {
         console.log(res)
-/*
-* this.goid = this.$route.query.regtime
-    this.goneme = this.$route.query.username
-    this.gotoken = this.$route.query.token
-* */
 
       })
       /*if (typeof phone == "undefined" || phone == null || phone == "") {
@@ -127,14 +138,17 @@ export default {
         self.toastShow = false
       }, 1500)
     },
-    game() {
+    game(e) {
       let phoneX = this.$refs.phoneX.value
-      this.$axios.get("/sdk/api/logingame", {
-        params: {
-          token: phoneX, sid: '${sid}'
-        }
-      }).then(res => {
+      this.$axios({
+        url:"http://192.168.1.29:8080/api/h5/index",
+        method:'get',
+        params:{account: phoneX, pid:14,gameid:100001,phone:e.currentTarget.title},
+      }).then(function (res) {
         console.log(res)
+        Util.$emit('demo',"demo")
+        Util.$emit("user",res+e.currentTarget.title)
+
       })
     },
     /*inputFun(e){

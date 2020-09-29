@@ -1,14 +1,12 @@
 <template>
   <!--<div id="container" style="width: 100%;">
     <div class="main">-->
-  <div id="content">
-
+  <div id="content" style="position: relative">
 
     <div id="content2" class="cain">
       <div class="top">
         <h2>客服中心</h2>
       </div>
-
     </div>
     <div class="koop">
       <!--<ul class="item">
@@ -25,8 +23,6 @@
           <div class="go"><a href=""><img src="../imgs/go.png" alt=""></a></div>
         </li>
       </ul>-->
-
-
       <div class="Customer-service" style="position: relative;">
         <div class="time" style="position: absolute; top: -16%;left: 5%;">
           <div class="time-li">
@@ -49,7 +45,7 @@
           </div>
         </div>
         <div class="Ask-questions">
-          <div class="advisory" @click="$router.push('/questions')">提问咨询</div>
+          <div class="advisory"  @click="question($event)" id="questions">提问咨询</div>
           <div class="advisory" @click="$router.push('/myconsultation')">我的咨询</div>
         </div>
       </div>
@@ -85,8 +81,12 @@
 
 
     </div>
+    <keep-alive>
+      <router-view style="position: absolute;top: 0;" :ref="moop"  :style="{display:abc}"></router-view><!--ref="recharge"v-show="bop" left: 0; width: 100%; -->
+    </keep-alive>
   </div>
   <!--</div>
+
 </div>-->
 </template>
 
@@ -94,11 +94,22 @@
 export default {
   name: "service",
   data() {
-    return {}
+    return {
+      abc: "none",
+      moop:""
+    }
   },
   created() {
   },
-  methods: {}
+  methods: {
+    question(e){
+      /*this.$router.replace({path:'/questions',query:{},name:'questions'})*/
+      console.log(e.currentTarget.id)
+      this.moop = e.currentTarget.id
+      this.abc = "block !important"
+      this.$router.replace({path: '/'+e.currentTarget.id, query: {}, name: e.currentTarget.id});
+    }
+  }
 }
 </script>
 

@@ -1,9 +1,10 @@
 <template>
-<div id="container">
-  <div class="main">
-    <div id="content2">
+  <!--<div id="container">
+    <div class="main">-->
+  <div id="content" class="lisr">
+    <div id="content2" class="cain">
       <div class="top">
-        <div class="back" onclick="history.back()"><img src="../imgs/back.png" alt=""></div>
+        <div class="back"  @click="bano"><img src="../imgs/back.png" alt=""></div>
         <h1>提问</h1>
         <div class="wen"><!--<img src="../imgs/wenhao-2.png" alt="">--></div>
       </div>
@@ -11,7 +12,7 @@
         <input type="text" id="phone" placeholder="请输入您的问题" ref="userphone1">
       </div>
       <div class="row" style="position: relative">
-        <input type="text" id="phonee" placeholder="请选择游戏类型"  ref="phoneX" @click="select" :value="tests" >
+        <input type="text" id="phonee" placeholder="请选择游戏类型" ref="phoneX" @click="select" :value="tests">
         <img src="../imgs/sanjiaoxing.png" class="row-img" alt="">
         <div class="account" v-show="tesa">
           <ul>
@@ -27,17 +28,19 @@
         <div class="reg" style="float: right;" @click="letsgo">确定</div>
       </div>
     </div>
-
+    <div class="toast" v-show="toastShow">
+      {{ toastText }}
+    </div>
   </div>
-  <div class="toast" v-show="toastShow">
-    {{toastText}}
-  </div>
-</div>
+  <!--</div>
+</div>-->
 </template>
 
 <script>
+import Util from "../assets/js/util";
+
 export default {
-name: "questions",
+  name: "questions",
   data() {
     return {
       tesa: false,
@@ -48,7 +51,7 @@ name: "questions",
     }
   },
   created() {
-
+/**/
   },
   methods: {
     select() {
@@ -59,24 +62,27 @@ name: "questions",
       this.tests = e.currentTarget.title
       this.tesa = false
     },
-    toast (e) {
+    toast(e) {
       let self = this
       self.toastText = e
       self.toastShow = true
-      setTimeout(function(){
+      setTimeout(function () {
         self.toastShow = false
       }, 1500)
     },
-    letsgo(){
+    letsgo() {
       let phone = this.$refs.userphone1.value
       let code = this.$refs.phoneX.value
       let textarea = this.$refs.textarea.value
       if (code === "") {
         this.toast("请输入选择的游戏类型")
-      } else  if (textarea === "") {
+      } else if (textarea === "") {
         this.toast("请输入您的问题或建议!")
       }
-    }
+    },
+    bano(){
+      history.back()
+    },
   }
 }
 </script>
@@ -85,13 +91,15 @@ name: "questions",
 @import "../style/base.css";
 @import "../style/user.css";
 @import "../style/login.css";
-.row{
+
+.row {
   width: 100%;
   height: 0.8rem;
   margin: 0.2rem auto;
   position: relative;
 }
- .row>input{
+
+.row > input {
   width: 100%;
   height: 100%;
   padding: 0 0.2rem;
@@ -99,24 +107,27 @@ name: "questions",
   border-radius: 5px;
   background-color: rgba(232, 232, 232, 0.62);
 }
- .content{
-   width: 100%;
-   height: 3rem;
- }
-.content>textarea{
+
+.content {
+  width: 100%;
+  height: 3rem;
+}
+
+.content > textarea {
   width: 100%;
   height: 100%;
-  padding:  0.2rem;
+  padding: 0.2rem;
   border: none;
   border-radius: 5px;
   background-color: rgba(232, 232, 232, 0.62);
-  resize : none;
+  resize: none;
   font-size: 13px;
   font-family: sans-serif;
 }
-.login-btn{
+
+.login-btn {
   display: flex;
-  width:100%;
+  width: 100%;
 }
 
 .reg, .btn {
@@ -130,14 +141,34 @@ name: "questions",
   font-size: 0.3rem;
   color: #fff;
 }
+
 .reg {
   background-color: #ffc837;
 }
-.row-img{
+
+.row-img {
   position: absolute;
   top: 0.3rem;
   right: 0.25rem;
   width: 0.26rem;
   height: 0.2rem;
+}
+.cain {
+  position: fixed;
+  width: 56vmax;
+  /*width: 52.5vmax;*/
+  z-index: 9;
+  overflow: hidden;
+
+}
+.lisr {
+  width: 60vmax !important;
+}
+
+@media screen and (orientation: portrait) {
+
+  .lisr {
+    width: 63.5vmax !important;
+  }
 }
 </style>

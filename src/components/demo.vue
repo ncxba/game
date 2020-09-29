@@ -28,7 +28,7 @@
 
       </div>
     </div>
-    <div class="fuchuan" v-show="true1">
+    <div class="fuchuan" v-if="true1" ><!---->
       <div class="gui">
         <div class="fuchuan-loi">
           <!--<logo ref="logo"></logo>
@@ -74,15 +74,18 @@ export default {
     'left':Left,
     'user':User
   },
+  /*
+  * visibility: hidden;
+  * */
   data() {
     return {
       abc: "none",
       true1: false,
       true: true,
-      piao:false,
+      piao:false, /*漂浮框*/
       huns:false,
       yunff:true,
-      routingDevice:''
+      routingDevice:'',
     }
   },
 

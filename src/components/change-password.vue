@@ -5,14 +5,14 @@
   <div id="content" style="background-color: #FFFFFF;">
     <div id="content2">
       <div class="top">
-        <div class="back"  @click="bano"><img src="../imgs/back.png" alt=""></div>
+        <div class="back" @click="bano"><img src="../imgs/back.png" alt=""></div>
         <h1>修改密码</h1>
       </div>
       <p style="color: #ddd;letter-spacing: 1px;margin: 0.2rem 0">您正在修改 <span
         style="color: #ffcc00;font-weight: bold"></span> 的密码</p>
       <input id="token" type="text" style="display:none" value="${token}">
       <form class="change">
-        <input id="opw" type="text" placeholder="请输入原密码" ref="oldPassword">
+        <input id="opw" type="text" placeholder="请输入原密码" ref="oldPassword" v-show="hiddens" >
 
         <input id="npw" type="text" placeholder="请输入新的密码" ref="NewPassword">
         <input id="cpw" type="text" placeholder="请确认新的密码" ref="confirmPassword">
@@ -35,14 +35,30 @@ export default {
   data() {
     return {
       toastShow: false,
-      toastText: ''
+      toastText: '',
+      hiddens:true
     }
   },
   created() {
-    console.log(this.$route.query)
+    let _this = this
+    this.$axios({
+      url:"http://192.168.1.29:8080/api/h5/index",
+      method:'get',
+      params:{pid:8,gameid:100001},
+    }).then(function (res) {
+      console.log(res)
+      if (res.data.passwordExist === 0){
+        _this.hiddens = false
+      } else {
+        _this.hiddens = true
+      }
+    })
+    // this.passwordS("ere")
+    // console.log(this.$route.query)
+
   },
   methods: {
-/**/
+
     confirm() {
       let old = this.$refs.oldPassword.value
       console.log(old)
@@ -55,9 +71,13 @@ export default {
       } else if (New !== confirm) {
         this.toast("两次密码不相同,请重新输入!")
       } else {
-        this.$axios.post("/sdk/api/fixpassword", {
-          token: token, opw: old, npw: New, cpw: confirm
-        }).then(res => {
+        let _this = this
+        this.$axios({
+          url:"http://192.168.1.29:8080/api/h5/index",
+          method:'get',
+          params:{newPassword:New,pid:9,gameid:100001,},
+        }).then(function (res) {
+          console.log(res)
 
         }).catch(function (error) {
 
@@ -75,7 +95,7 @@ export default {
     },
     bano(){
       history.back()
-      Util.$emit('user',"user")
+      // Util.$emit('user',"user")
     }
   }
 }

@@ -38,7 +38,7 @@
         <p>订单记录</p>
         <div class="go"><a><img src="../imgs/go.png" alt=""></a></div>
       </li>
-      <li   @click="change($event)" id="change-password">
+      <li   @click="change($event)" :title="tipid" id="change-password">
         <p>修改密码</p>
         <div class="go"><a><img src="../imgs/go.png" alt=""></a></div>
       </li>
@@ -71,29 +71,31 @@ export default {
     return {
       bop: false,
       abc: "none",
-      moop:""
+      moop:"",
+      tipid:""
     }
   },
   mounted() {
     Util.$on('user', (test) => {
       console.log(test);
+      this.tipid = test.data.token
       this.abc = 'none !important';
     })
   },
   methods: {
-    recharged(e) {
+    /*recharged(e) {
       console.log(e)
       console.log(e.currentTarget.id)
       this.moop = e.currentTarget.id
-      this.$router.push({path: '/'+e.currentTarget.id, query: {}, name: e.currentTarget.id});
+      this.$router.replace({path: '/'+e.currentTarget.id, query: {}, name: e.currentTarget.id});
       this.bop = true
       this.abc = "block !important"
 
-    },
+    },*/
     change(e){
-      console.log(e.currentTarget.id)
-      this.moop = e.currentTarget.id
-      this.$router.push({path: '/change-password', query: {id:"121"}, name: 'change-password'});
+      console.log(e.currentTarget.title)
+      this.moop = "change-password"
+      this.$router.push({path: '/change-password', query: {token:e.currentTarget.title}, name: 'change-password'});
       this.abc = "block !important"
     }
   }

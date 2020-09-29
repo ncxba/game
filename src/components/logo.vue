@@ -81,7 +81,7 @@ export default {
         console.log(res);*/
 
         this.$axios({
-          url:"http://192.168.1.12:8080/api/h5/index",
+          url:"http://192.168.1.29:8080/api/h5/index",
           method:'get',
             params:{username: username, password: password, pid:4,gameid:100001,imei:1,apikey:1,sign:1},
            // data:{phone: phone, code: code,pid:"4",gameid:"100001"},

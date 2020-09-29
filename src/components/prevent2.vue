@@ -8,7 +8,6 @@
           <h1>防沉迷系统</h1>
         </div>
         <div class="prevent2">
-
           <div class="limit">根据国家相关规定，请完成实名认证；未成年玩家将受到以下游戏健康限制：</div>
           <p>1.某些游戏时间段将受到限制</p>
           <p>2.游戏充值金额将受到限制 &nbsp;&nbsp;&nbsp; <a   @click="recharged($event)" id="prevent-detail">查看详情&gt</a></p>
